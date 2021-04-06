@@ -1,15 +1,15 @@
 <!-- markdownlint-disable MD033 MD041 -->
 <h1 align="center">
-    Project Template
+    Opyrator
 </h1>
 
 <p align="center">
-    <strong>Template setup for project repositories.</strong>
+    <strong>Python functions with superpowers. Instantly deploy with REST API, UI, and more.</strong>
 </p>
 
 <p align="center">
-    <a href="https://github.com/ml-tooling/project-defaults/blob/main/LICENSE" title="Project License"><img src="https://img.shields.io/badge/License-MIT-green.svg"></a>
-    <a href="https://github.com/best-of-lists/best-of-generator/actions?query=workflow%3Abuild-pipeline" title="Build status"><img src="https://img.shields.io/github/workflow/status/best-of-lists/best-of-generator/build-pipeline?style=flat"></a>
+    <a href="https://github.com/ml-tooling/opyrator/blob/main/LICENSE" title="Project License"><img src="https://img.shields.io/badge/License-MIT-green.svg"></a>
+    <a href="https://github.com/ml-tooling/opyrator/actions?query=workflow%3Abuild-pipeline" title="Build status"><img src="https://img.shields.io/github/workflow/status/ml-tooling/opyrator/build-pipeline?style=flat"></a>
     <a href="ttps://mltooling.substack.com/subscribe" title="Subscribe to newsletter"><img src="http://bit.ly/2Md9rxM"></a>
     <a href="https://twitter.com/mltooling" title="Follow on Twitter"><img src="https://img.shields.io/twitter/follow/mltooling.svg?style=social&label=Follow"></a>
 </p>
@@ -19,11 +19,11 @@
   <a href="#features">Features & Screenshots</a> •
   <a href="#documentation">Documentation</a> •
   <a href="#support--feedback">Support</a> •
-  <a href="https://github.com/ml-tooling/project-defaults/issues/new?labels=bug&template=01_bug-report.md">Report a Bug</a> •
+  <a href="https://github.com/ml-tooling/opyrator/issues/new?labels=bug&template=01_bug-report.md">Report a Bug</a> •
   <a href="#faq">FAQ</a> •
   <a href="#known-issues">Known Issues</a> •
   <a href="#contribution">Contribution</a> •
-  <a href="https://github.com/ml-tooling/project-defaults/releases">Changelog</a>
+  <a href="https://github.com/ml-tooling/opyrator/releases">Changelog</a>
 </p>
 
 Every project should contain a short description here to help users understand what it does. This description should cover a maximum of 4 lines. If there is a UI, you can also put a screenshot under this description.
@@ -44,8 +44,8 @@ This project is maintained by [Benjamin Räthlein](https://twitter.com/raethlein
 
 | Type                     | Channel                                              |
 | ------------------------ | ------------------------------------------------------ |
-| 🚨&nbsp; **Bug Reports**       | <a href="https://github.com/ml-tooling/project-defaults/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+label%3Abug+sort%3Areactions-%2B1-desc+" title="Open Bug Report"><img src="https://img.shields.io/github/issues/ml-tooling/project-defaults/bug.svg?label=bug"></a>                                 |
-| 🎁&nbsp; **Feature Requests**  | <a href="https://github.com/ml-tooling/project-defaults/issues?q=is%3Aopen+is%3Aissue+label%3Afeature+sort%3Areactions-%2B1-desc" title="Open Feature Request"><img src="https://img.shields.io/github/issues/ml-tooling/project-defaults/feature.svg?label=feature%20request"></a>                                 |
+| 🚨&nbsp; **Bug Reports**       | <a href="https://github.com/ml-tooling/opyrator/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+label%3Abug+sort%3Areactions-%2B1-desc+" title="Open Bug Report"><img src="https://img.shields.io/github/issues/ml-tooling/opyrator/bug.svg?label=bug"></a>                                 |
+| 🎁&nbsp; **Feature Requests**  | <a href="https://github.com/ml-tooling/opyrator/issues?q=is%3Aopen+is%3Aissue+label%3Afeature+sort%3Areactions-%2B1-desc" title="Open Feature Request"><img src="https://img.shields.io/github/issues/ml-tooling/opyrator/feature.svg?label=feature%20request"></a>                                 |
 | 👩‍💻&nbsp; **Usage Questions**   |  _tbd_ |
 | 📢&nbsp; **Announcements**  | _tbd_ |
 | ❓&nbsp; **Other Requests** | <a href="mailto:team@ml-tooling.org" title="Email ML Tooling Team"><img src="https://img.shields.io/badge/email-ML Tooling-green?logo=mail.ru&logoColor=white"></a> |
@@ -78,9 +78,9 @@ _TODO: sourcerer [hall of fame](https://sourcerer.io/settings#hof) is deprecated
 
 ## Contribution
 
-- Pull requests are encouraged and always welcome. Read our [contribution guidelines](https://github.com/ml-tooling/project-defaults/tree/main/CONTRIBUTING.md) and check out [help-wanted](https://github.com/ml-tooling/project-defaults/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+label%3A"help+wanted"+sort%3Areactions-%2B1-desc+) issues.
-- Submit Github issues for any [feature request and enhancement](https://github.com/ml-tooling/project-defaults/issues/new?assignees=&labels=feature&template=02_feature-request.md&title=), [bugs](https://github.com/ml-tooling/project-defaults/issues/new?assignees=&labels=bug&template=01_bug-report.md&title=), or [documentation](https://github.com/ml-tooling/project-defaults/issues/new?assignees=&labels=documentation&template=03_documentation.md&title=) problems.
-- By participating in this project, you agree to abide by its [Code of Conduct](https://github.com/ml-tooling/project-defaults/blob/main/.github/CODE_OF_CONDUCT.md).
+- Pull requests are encouraged and always welcome. Read our [contribution guidelines](https://github.com/ml-tooling/opyrator/tree/main/CONTRIBUTING.md) and check out [help-wanted](https://github.com/ml-tooling/opyrator/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+label%3A"help+wanted"+sort%3Areactions-%2B1-desc+) issues.
+- Submit Github issues for any [feature request and enhancement](https://github.com/ml-tooling/opyrator/issues/new?assignees=&labels=feature&template=02_feature-request.md&title=), [bugs](https://github.com/ml-tooling/opyrator/issues/new?assignees=&labels=bug&template=01_bug-report.md&title=), or [documentation](https://github.com/ml-tooling/opyrator/issues/new?assignees=&labels=documentation&template=03_documentation.md&title=) problems.
+- By participating in this project, you agree to abide by its [Code of Conduct](https://github.com/ml-tooling/opyrator/blob/main/.github/CODE_OF_CONDUCT.md).
 - The [development section](#development) below contains information on how to build and test the project after you have implemented some changes.
 
 ## Development
@@ -93,12 +93,8 @@ To simplify the process of building this project from scratch, we provide build-
 act -b -j build
 ```
 
-Refer to our [contribution guides](https://github.com/ml-tooling/project-defaults/blob/main/CONTRIBUTING.md#development-instructions) for more detailed information on our build scripts and development process.
+Refer to our [contribution guides](https://github.com/ml-tooling/opyrator/blob/main/CONTRIBUTING.md#development-instructions) for more detailed information on our build scripts and development process.
 
 ---
 
 Licensed **MIT**. Created and maintained with ❤️&nbsp; by developers from Berlin.
-
-[![ML Tooling on Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/ml-tooling) [![ML Tooling on Medium](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@ml-tooling) [![Email ML Tooling](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:team@ml-tooling.org)
-
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fml-tooling%2Fml-hub.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fml-tooling%2Fml-hub?ref=badge_large)
