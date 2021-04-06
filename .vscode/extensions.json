@@ -1,8 +1,6 @@
 {
   "recommendations": [
     // General Development
-    "VisualStudioExptTeam.vscodeintellicode",
-    "DotJoshJohnson.xml",
     "redhat.vscode-yaml",
     "christian-kohler.path-intellisense",
     "esbenp.prettier-vscode",
