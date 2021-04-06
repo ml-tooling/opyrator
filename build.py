@@ -54,9 +54,9 @@ def main(args: dict) -> None:
             )
 
             # Python 3.7
-            build_python.test_with_py_version(
-                python_version="3.7.9", exit_on_error=True
-            )
+            # build_python.test_with_py_version(
+            #    python_version="3.7.9", exit_on_error=True
+            # )
 
             # Activated Python Environment (3.8)
             build_python.install_build_env()
