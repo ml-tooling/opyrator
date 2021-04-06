@@ -1,0 +1,21 @@
+{
+  "recommendations": [
+    // General Development
+    "VisualStudioExptTeam.vscodeintellicode",
+    "DotJoshJohnson.xml",
+    "redhat.vscode-yaml",
+    "christian-kohler.path-intellisense",
+    "esbenp.prettier-vscode",
+    "EditorConfig.EditorConfig",
+    // Collaboration
+    "aaron-bond.better-comments",
+    // Markdown
+    "DavidAnson.vscode-markdownlint",
+    "yzhang.markdown-all-in-one",
+    "shd101wyy.markdown-preview-enhanced",
+    // Python Development
+    "ms-python.python",
+    "njpwerner.autodocstring",
+    "ms-toolsai.jupyter",
+  ]
+}
