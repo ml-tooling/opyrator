@@ -23,7 +23,7 @@
   <a href="https://github.com/ml-tooling/opyrator/releases">Changelog</a>
 </p>
 
-Opyrator enables you to instantly turn a simple Python function into a powerful web service that includes a REST API and a full-blown graphical UI. It can be saved & shared as self-contained executable files and instantly deployed & scaled for production usage. Opyrator is powerded by Pydantic, FastAPI, and Streamlit and enables you to build your web apps and services within seconds.
+Opyrator enables you to instantly turn a simple Python function into a powerful web service that includes a REST API and a full-blown graphical UI. It can be saved & shared as self-contained executable file and instantly deployed & scaled for production usage. Opyrator is powered by Pydantic, FastAPI, and Streamlit and enables you to build your web apps and services within seconds.
 
 ## Highlights
 
@@ -63,6 +63,7 @@ pip install opyrator
         time.sleep(input.wait)
         return Output(text=input.text)
     ```
+    _Requirements: The function needs to be annotated with typing hints, and the `input` parameter and return value needs to be based on [Pydantic Models](https://pydantic-docs.helpmanual.io/)._
 
 2. Copy this code to a file `opyrator.py`
 3. Run the UI server from command-line:
@@ -70,7 +71,7 @@ pip install opyrator
     ```
     opyrator launch-ui opyrator:hello_world
     ```
-    In the output, there's a line that shows where your web app is being served, on your local machine.
+    _In the output, there's a line that shows where your web app is being served, on your local machine._
 
     TODO: Add screenshot
 
@@ -79,7 +80,7 @@ pip install opyrator
     ```
     opyrator launch-api opyrator:hello_world
     ```
-    In the output, there's a line that shows where your web service is being served, on your local machine.
+    _In the output, there's a line that shows where your web service is being served, on your local machine._
 
     TODO: Add screenshot
 5. Find out more usage details and features in the [Features](#features) section.
