@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD033 MD041 -->
 <h1 align="center">
-    Opyrator
+    opyrator
 </h1>
 
 <p align="center">
@@ -17,26 +17,72 @@
 <p align="center">
   <a href="#getting-started">Getting Started</a> •
   <a href="#features">Features & Screenshots</a> •
-  <a href="#documentation">Documentation</a> •
   <a href="#support--feedback">Support</a> •
   <a href="https://github.com/ml-tooling/opyrator/issues/new?labels=bug&template=01_bug-report.md">Report a Bug</a> •
-  <a href="#faq">FAQ</a> •
-  <a href="#known-issues">Known Issues</a> •
   <a href="#contribution">Contribution</a> •
   <a href="https://github.com/ml-tooling/opyrator/releases">Changelog</a>
 </p>
 
-Every project should contain a short description here to help users understand what it does. This description should cover a maximum of 4 lines. If there is a UI, you can also put a screenshot under this description.
+Opyrator enables you to instantly turn a simple Python function into a powerful web service that includes a REST API and a full-blown graphical UI. It can be saved & shared as self-contained executable files and instantly deployed & scaled for production usage. Opyrator is powerded by Pydantic, FastAPI, and Streamlit and enables you to build your web apps and services within seconds.
 
 ## Highlights
 
-- 📄&nbsp; README template with predefined structure.
-- 🗃&nbsp; Labeling and issue organization system.
-- 📝&nbsp; Contribution guideline template.
+- 🪄&nbsp; Turn functions into production-ready services within seconds.
+- 🔌&nbsp; Auto-generated REST API based on FastAPI.
+- 🌅&nbsp; Auto-generated UI based on Streamlit.
+- 📦&nbsp; Save and share as self-contained executable file.
+- 📈&nbsp; Instantly deploy and scale for production usage.
+- Export to Docker, Pex, ...
 
 ## Getting Started
 
-_This section should contain the simplest and most basic way to run and use the project, preferably with one command._
+### Installation
+
+> _Requirements: Python 3.6+._
+
+```bash
+pip install opyrator
+```
+
+### Usage
+
+1. A simple opyrator-compatible function could look like this:
+
+    ```python
+    from pydantic import BaseModel
+    import time
+
+    def Input(BaseModel):
+        text: str
+        wait: int
+
+    def Output(BaseModel):
+        text: str
+
+    def hello_world(input: Input) -> Output:
+        time.sleep(input.wait)
+        return Output(text=input.text)
+    ```
+
+2. Copy this code to a file `opyrator.py`
+3. Run the UI server from command-line:
+
+    ```
+    opyrator launch-ui opyrator:hello_world
+    ```
+    In the output, there's a line that shows where your web app is being served, on your local machine.
+
+    TODO: Add screenshot
+
+4. Run the REST API server from command-line:
+
+    ```
+    opyrator launch-api opyrator:hello_world
+    ```
+    In the output, there's a line that shows where your web service is being served, on your local machine.
+
+    TODO: Add screenshot
+5. Find out more usage details and features in the [Features](#features) section.
 
 ## Support & Feedback
 
@@ -46,8 +92,8 @@ This project is maintained by [Benjamin Räthlein](https://twitter.com/raethlein
 | ------------------------ | ------------------------------------------------------ |
 | 🚨&nbsp; **Bug Reports**       | <a href="https://github.com/ml-tooling/opyrator/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+label%3Abug+sort%3Areactions-%2B1-desc+" title="Open Bug Report"><img src="https://img.shields.io/github/issues/ml-tooling/opyrator/bug.svg?label=bug"></a>                                 |
 | 🎁&nbsp; **Feature Requests**  | <a href="https://github.com/ml-tooling/opyrator/issues?q=is%3Aopen+is%3Aissue+label%3Afeature+sort%3Areactions-%2B1-desc" title="Open Feature Request"><img src="https://img.shields.io/github/issues/ml-tooling/opyrator/feature.svg?label=feature%20request"></a>                                 |
-| 👩‍💻&nbsp; **Usage Questions**   |  _tbd_ |
-| 📢&nbsp; **Announcements**  | _tbd_ |
+| 👩‍💻&nbsp; **Usage Questions**   |  <a href="https://github.com/ml-tooling/opyrator/issues?q=is%3Aopen+is%3Aissue+label%3Asupport+sort%3Areactions-%2B1-desc" title="Open Support Request"> <img src="https://img.shields.io/github/issues/ml-tooling/opyrator/support.svg?label=support%20request"></a> <a href="https://gitter.im/ml-tooling/community" title="Chat on Gitter"><img src="https://badges.gitter.im/ml-tooling/community.svg"></a> |
+| 📢&nbsp; **Announcements** | <a href="https://gitter.im/ml-tooling/community" title="Chat on Gitter"><img src="https://badges.gitter.im/mml-tooling/community.svg"></a>  <a href="https://mltooling.substack.com/subscribe" title="Subscribe for updates"><img src="http://bit.ly/2Md9rxM"></a> <a href="https://twitter.com/mltooling" title="ML Tooling on Twitter"><img src="https://img.shields.io/twitter/follow/mltooling.svg?style=social&label=Follow"> |
 | ❓&nbsp; **Other Requests** | <a href="mailto:team@ml-tooling.org" title="Email ML Tooling Team"><img src="https://img.shields.io/badge/email-ML Tooling-green?logo=mail.ru&logoColor=white"></a> |
 
 ## Features
@@ -71,10 +117,6 @@ Please refer to [our documentation](#TODO) for information about deployment or u
 <details>
 <summary><b>This is the example description of a known issue</b> (click to expand...)</summary>
 </details>
-
-## Contributors
-
-_TODO: sourcerer [hall of fame](https://sourcerer.io/settings#hof) is deprecated, find something different?_
 
 ## Contribution
 
