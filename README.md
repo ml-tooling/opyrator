@@ -248,10 +248,25 @@ _WIP: This feature is not finalized yet. You can track the progress and vote for
 
 ### Python Client
 
+Every deployed Opyrator provides a Python client library which can be installed via pip:
+
+```bash
+pip intall http://my-opyrator:8080/client
+```
+
+And used in your code, as shown below:
+
+```python
+from my_opyrator import Client, Input
+opyrator_client = Client("http://my-opyrator:8080")
+result = opyrator_client.call(Input(text="hello", wait=1))
+```
+
+_WIP: This feature is not finalized yet. You can track the progress and vote for the feature [here](#TODO)._
 
 ### Pre-defined Interfaces
 
-Opyrators provides a growing collection of predefined interfaces (input- and output schemas) for common tasks. Some of these interfaces also provide more advanced UIs and Visualizations. You can reuse these schemas to speed up your development and, thereby, also keep your Opyrators compatible to other functionality improvements or other Opyrators.
+Opyrator provides a growing collection of predefined interfaces (input- and output schemas) for common tasks. Some of these interfaces also provide more advanced UIs and Visualizations. You can reuse these schemas to speed up your development and, thereby, also keep your Opyrators compatible to other functionality improvements or other Opyrators.
 
 You can find some of the available interfaces in the [examples](#examples) section or in this [source code package](#TODO).
 
