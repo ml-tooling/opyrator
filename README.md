@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD033 MD041 -->
 <h1 align="center">
-    opyrator
+    Opyrator
 </h1>
 
 <p align="center">
@@ -23,7 +23,10 @@
   <a href="https://github.com/ml-tooling/opyrator/releases">Changelog</a>
 </p>
 
-Opyrator enables you to instantly turn a simple Python function into a powerful web service that includes a REST API and a full-blown graphical UI. It can be saved & shared as self-contained executable file and instantly deployed & scaled for production usage. Opyrator is powered by Pydantic, FastAPI, and Streamlit and enables you to build your web apps and services within seconds.
+Opyrator enables you to instantly turn a simple Python function into a powerful web service that includes a HTTP REST API and a full-blown graphical UI. It can be saved & shared as self-contained executable file and instantly deployed & scaled for production usage. Opyrator is powered by Pydantic, FastAPI, and Streamlit and enables you to build your web apps and services within seconds.
+
+_Alpha Version: This is still under heavy development and only suggested for experimental usage._
+
 
 ## Highlights
 
@@ -147,7 +150,7 @@ _TODO: Screenshot_
 
 _💡 Make sure that all requirements of your script are installed in the active Python environment._
 
-You can influence most aspects of the UI just by changing and improving the input- and output-schema of your function. Furthermore, it is also possible to define custom UIs for the function input and output. For more details, refer to the [input- and output-schema](#TODO) section.
+You can influence most aspects of the UI just by changing and improving the input- and output-schema of your function. Furthermore, it is also possible to define custom UIs for the function's input and output. For more details, refer to the [input- and output-schema](#TODO) section.
 
 The port and host used by the UI server can be provided via CLI arguments:
 
@@ -177,6 +180,8 @@ An Opyrator can also be executed via command-line:
 opyrator call my_opyrator:hello_world '{"text": "hello", "wait": 1}'
 ```
 
+_TODO: Add screenshot_
+
 The CLI interface also works using the [zip export format](#zip-export):
 
 ```bash
@@ -194,6 +199,8 @@ Thereby, the function call is executed by the Opyrator API server, instead of lo
 ### ZIP Export
 
 ### Docker Export
+
+### PEX Export
 
 ### Python Client
 
