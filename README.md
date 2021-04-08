@@ -208,6 +208,12 @@ This exported ZIP file packages relevant source code and data artifacts into a s
 
 External requirements are automatically discovered from the working directory based on the following files: `Pipfile` (Pipenv environment), `environment.yml` (Conda environment), `pyproject.toml` (Poetry dependencies), `requirements.txt` (PIP requirements), `setup.py` (Python project requirements), `packages.txt` (apt-get packages), or discovered via [pipreqs](https://github.com/bndr/pipreqs) as fallback. However, external requirements are only included as instructions and are not packaged into the ZIP file. If you want export your Opyrator fully self-contained including all requirements or even the Python interpreter itself, please refer to the [Docker](#docker-export) or [PEX](#pex-export) export options.
 
+As a side note, Opyrators exported as ZIP files are (mini) Python libraries which can be pip-installed, imported, and used from other Python code:
+
+```bash
+pip install my-opyrator.zip
+```
+
 _WIP: This feature is not finalized yet. You can track the progress and vote for the feature [here](#TODO)_
 
 ### Docker Export
@@ -226,17 +232,30 @@ After the successful export, the Docker image can be run as shown below:
 docker run -p 8080:8080 my-opyrator-image:latest
 ```
 
-Running your Opyrator within this Docker image has the advantage that only a single port is required to be exposed. The speration between UI and API is done via URL paths: `http://localhost:8080/api` (API); `http://localhost:8080/ui` (UI). The UI is autoamtically configured to use the API for all function calls.
+Running your Opyrator within this Docker image has the advantage that only a single port is required to be exposed. The speration between UI and API is done via URL paths: `http://localhost:8080/api` (API); `http://localhost:8080/ui` (UI). The UI is automatically configured to use the API for all function calls.
 
 _WIP: This feature is not finalized yet. You can track the progress and vote for the feature [here](#TODO)._
 
 ### PEX Export
 
+In addition to the ZIP export, Opyrator also provides the capability to export to a PEX file. [PEX](https://github.com/pantsbuild/pex) is a tool to create self-contained executable Python environments that contain all relevant python dependencies.
+
+```bash
+opyrator export my_opyrator:hello_world --pex my-opyrator.pex
+```
+
+_WIP: This feature is not finalized yet. You can track the progress and vote for the feature [here](#TODO)._
+
 ### Python Client
+
 
 ### Pre-defined Interfaces
 
-- For common tasks.
+Opyrators provides a growing collection of predefined interfaces (input- and output schemas) for common tasks. Some of these interfaces also provide more advanced UIs and Visualizations. You can reuse these schemas to speed up your development and, thereby, also keep your Opyrators compatible to other functionality improvements or other Opyrators.
+
+You can find some of the available interfaces in the [examples](#examples) section or in this [source code package](#TODO).
+
+_WIP: This feature is not finalized yet. You can track the progress and vote for the feature [here](#TODO)._
 
 ### Deploy for Production Usage
 
