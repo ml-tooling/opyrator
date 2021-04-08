@@ -8,6 +8,8 @@
 </p>
 
 <p align="center">
+    <a href="https://pypi.org/project/opyrator/" title="PyPi Version"><img src="https://img.shields.io/pypi/v/opyrator?color=green&style=flat"></a>
+    <a href="https://pypi.org/project/opyrator/" title="Python Version"><img src="https://img.shields.io/badge/Python-3.6%2B-blue&style=flat"></a>
     <a href="https://github.com/ml-tooling/opyrator/blob/main/LICENSE" title="Project License"><img src="https://img.shields.io/badge/License-MIT-green.svg"></a>
     <a href="https://github.com/ml-tooling/opyrator/actions?query=workflow%3Abuild-pipeline" title="Build status"><img src="https://img.shields.io/github/workflow/status/ml-tooling/opyrator/build-pipeline?style=flat"></a>
     <a href="ttps://mltooling.substack.com/subscribe" title="Subscribe to newsletter"><img src="http://bit.ly/2Md9rxM"></a>
@@ -109,7 +111,8 @@ This project is maintained by [Benjamin Räthlein](https://twitter.com/raethlein
   <a href="#zip-export">ZIP Export</a> •
   <a href="#docker-export">Docker Export</a> •
   <a href="#python-client">Python Client</a> •
-  <a href="#pre-defined-interfaces">Pre-defined Interfaces</a>
+  <a href="#pre-defined-interfaces">Pre-defined Interfaces</a> •
+  <a href="#production-deployment">Production Deployment</a>
 </p>
 
 ### REST API
@@ -272,7 +275,7 @@ You can find some of the available interfaces in the [examples](#examples) secti
 
 _WIP: This feature is not finalized yet. You can track the progress and vote for the feature [here](#TODO)._
 
-### Deploy for Production Usage
+### Production Deployment
 
 Rolling out your Opyrators for production usage might require additional features such as SSL, authentication, API tokens, unlimited scalability, load balancing, and monitoring. Therefore, we provide capabilties to easily  deploy your Opyrators directly on scalable and secure cloud platforms without any major overhead:
 
@@ -286,7 +289,19 @@ _WIP: This feature is not finalized yet. You can track the progress and vote for
 
 ### Compatible Functions
 
+A function is compatible with Opyrator if it fullfills the following requirements:
+
+- A single paramter called `input` which MUST be a subclass of the [Pydantic BaseModel](https://pydantic-docs.helpmanual.io/usage/models/).
+- A single return value which MUST be a subclass of the [Pydantic BaseModel](https://pydantic-docs.helpmanual.io/usage/models/).
+- The `input` parameter and return value MUST be annotated with Python typing hints.
+
 ### Input- and Output-Schema
+
+_TODO_
+
+These input- and output-models are used to generate the REST API and Web UI.
+
+_TODO: Add mapping table between JSON Schema and UI elements._
 
 ### Command-line Interface
 
