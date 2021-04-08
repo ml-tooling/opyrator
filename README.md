@@ -109,12 +109,12 @@ This project is maintained by [Benjamin Räthlein](https://twitter.com/raethlein
   <a href="#zip-export">ZIP Export</a> •
   <a href="#docker-export">Docker Export</a> •
   <a href="#python-client">Python Client</a> •
-  <a href="#pre-defined-interfaces">Pre-defined Interfaces</a> •
+  <a href="#pre-defined-interfaces">Pre-defined Interfaces</a>
 </p>
 
 ### REST API
 
-With Opyrator, you can instantly launch a local HTTP (REST) API server for any compatible function (callable):
+With Opyrator, you can instantly launch a local HTTP (REST) API server for any [compatible function](#compatible-functions):
 
 ```bash
 opyrator launch-api my_opyrator:hello_world
@@ -140,7 +140,7 @@ opyrator launch-api my-opyrator.zip
 
 ### Graphical UI
 
-You can launch a graphical user interface - powered by  [Streamlit](https://streamlit.io/) - for your compatible function. The UI is auto-generated from the input- and output-schema of the given function.
+You can launch a graphical user interface - powered by  [Streamlit](https://streamlit.io/) - for your [compatible function](#compatible-functions). The UI is auto-generated from the input- and output-schema of the given function.
 
 ```bash
 opyrator launch-ui my_opyrator:hello_world
@@ -198,7 +198,7 @@ Thereby, the function call is executed by the Opyrator API server, instead of lo
 
 ### ZIP Export
 
-Opyrator allows you to package and export a compatible function into a self-contained ZIP file:
+Opyrator allows you to package and export a [compatible function](#compatible-functions) into a self-contained ZIP file:
 
 ```bash
 opyrator export my_opyrator:hello_world my-opyrator.zip
@@ -248,7 +248,7 @@ _WIP: This feature is not finalized yet. You can track the progress and vote for
 
 ### Python Client
 
-Every deployed Opyrator provides a Python client library which can be installed via pip:
+Every deployed Opyrator provides a Python client library via an endpoint method which can be installed with pip:
 
 ```bash
 pip intall http://my-opyrator:8080/client
@@ -284,9 +284,13 @@ _WIP: This feature is not finalized yet. You can track the progress and vote for
 
 ## Documentation
 
-### Opyrator CLI
+### Compatible Functions
 
 ### Input- and Output-Schema
+
+### Command-line Interface
+
+_TODO: Add `help` output of CLI_
 
 ## Contribution
 
