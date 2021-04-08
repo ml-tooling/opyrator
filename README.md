@@ -208,14 +208,27 @@ This exported ZIP file packages relevant source code and data artifacts into a s
 
 External requirements are automatically discovered from the working directory based on the following files: `Pipfile` (Pipenv environment), `environment.yml` (Conda environment), `pyproject.toml` (Poetry dependencies), `requirements.txt` (PIP requirements), `setup.py` (Python project requirements), `packages.txt` (apt-get packages), or discovered via [pipreqs](https://github.com/bndr/pipreqs) as fallback. However, external requirements are only included as instructions and are not packaged into the ZIP file. If you want export your Opyrator fully self-contained including all requirements or even the Python interpreter itself, please refer to the [Docker](#docker-export) or [PEX](#pex-export) export options.
 
+_WIP: This feature is not finalized yet. You can track the progress and vote for the feature [here](#TODO)_
+
 ### Docker Export
 
-In addition,
+In addition to the ZIP export, Opyrator also provides the capability to export to a Docker image:
+
 ```bash
 opyrator export my_opyrator:hello_world --docker my-opyrator-image:latest
 ```
 
-The Docker image 
+_💡 The Docker export requires that Docker is installed on your machine._
+
+After the successful export, the Docker image can be run as shown below:
+
+```bash
+docker run -p 8080:8080 my-opyrator-image:latest
+```
+
+Running your Opyrator within this Docker image has the advantage that only a single port is required to be exposed. The speration between UI and API is done via URL paths: `http://localhost:8080/api` (API); `http://localhost:8080/ui` (UI). The UI is autoamtically configured to use the API for all function calls.
+
+_WIP: This feature is not finalized yet. You can track the progress and vote for the feature [here](#TODO)._
 
 ### PEX Export
 
@@ -225,7 +238,19 @@ The Docker image
 
 - For common tasks.
 
+### Deploy for Production Usage
+
+Rolling out your Opyrators for production usage might require additional features such as SSL, authentication, API tokens, unlimited scalability, load balancing, and monitoring. Therefore, we provide capabilties to easily  deploy your Opyrators directly on scalable and secure cloud platforms without any major overhead:
+
+```bash
+opyrator deploy my_opyrator:hello_world <deployment-provider> <deployment-provider-options>
+```
+
+_WIP: This feature is not finalized yet. You can track the progress and vote for the feature [here](#TODO)._
+
 ## Documentation
+
+### Opyrator CLI
 
 ### Input- and Output-Schema
 
