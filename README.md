@@ -28,11 +28,11 @@ Opyrator enables you to instantly turn a simple Python function into a powerful 
 ## Highlights
 
 - 🪄&nbsp; Turn functions into production-ready services within seconds.
-- 🔌&nbsp; Auto-generated REST API based on FastAPI.
-- 🌅&nbsp; Auto-generated UI based on Streamlit.
-- 📦&nbsp; Save and share as self-contained executable file.
+- 🔌&nbsp; Auto-generated HTTP REST API based on FastAPI.
+- 🌅&nbsp; Auto-generated Web UI based on Streamlit.
+- 📦&nbsp; Save and share as self-contained executable file or Docker image.
+- 🧩&nbsp; Reuse pre-defined interfaces & combine with existing Opyrators.
 - 📈&nbsp; Instantly deploy and scale for production usage.
-- Export to Docker, Pex, ...
 
 ## Getting Started
 
@@ -46,7 +46,7 @@ pip install opyrator
 
 ### Usage
 
-1. A simple opyrator-compatible function could look like this:
+1. A simple Opyrator-compatible function could look like this:
 
     ```python
     from pydantic import BaseModel
@@ -63,13 +63,13 @@ pip install opyrator
         time.sleep(input.wait)
         return Output(text=input.text)
     ```
-    _Requirements: The function needs to be annotated with typing hints, and the `input` parameter and return value needs to be based on [Pydantic Models](https://pydantic-docs.helpmanual.io/)._
+    _Requirements: The function needs to be annotated with typing hints, and the `input` parameter and return value needs to be based on [Pydantic models](https://pydantic-docs.helpmanual.io/)._
 
-2. Copy this code to a file `opyrator.py`
+2. Copy this code to a file `my_opyrator.py`
 3. Run the UI server from command-line:
 
-    ```
-    opyrator launch-ui opyrator:hello_world
+    ```bash
+    opyrator launch-ui my_opyrator:hello_world
     ```
     _In the output, there's a line that shows where your web app is being served, on your local machine._
 
@@ -77,8 +77,8 @@ pip install opyrator
 
 4. Run the REST API server from command-line:
 
-    ```
-    opyrator launch-api opyrator:hello_world
+    ```bash
+    opyrator launch-api my_opyrator:hello_world
     ```
     _In the output, there's a line that shows where your web service is being served, on your local machine._
 
@@ -99,25 +99,111 @@ This project is maintained by [Benjamin Räthlein](https://twitter.com/raethlein
 
 ## Features
 
-_Use this section for advertising the most important features and advantages of the project. Also, add screenshots or examples to showcase important features. The main purpose of this section is marketing._
+<p align="center">
+  <a href="#rest-api">REST API</a> •
+  <a href="#graphical-ui">Graphical UI</a> •
+  <a href="#command-line interface">CLI</a> •
+  <a href="#zip-export">ZIP Export</a> •
+  <a href="#docker-export">Docker Export</a> •
+  <a href="#python-client">Python Client</a> •
+  <a href="#pre-defined-interfaces">Pre-defined Interfaces</a> •
+</p>
+
+### REST API
+
+With Opyrator, you can instantly launch a local HTTP (REST) API server for any compatible function (callable), e.g.:
+
+```bash
+opyrator launch-api my_opyrator:hello_world
+```
+
+This will launch a [FastAPI](https://fastapi.tiangolo.com/) server based on the [OpenAPI standard](https://swagger.io/specification) and with an automatic interactive documentation.
+
+_TODO: Add Screenshot_
+
+_💡 Make sure that all requirements of your script are installed in the active Python enviornment._
+
+The port and host used by the API server can be provided via CLI arguments:
+
+```bash
+opyrator launch-api my_opyrator:hello_world --port 8080 --host "0.0.0.0"
+```
+
+The API server can also be started via the exported zip-file format (see [zip export section](#zip-export) below).
+
+```bash
+opyrator launch-api my-opyrator.zip
+```
+
+### Graphical UI
+
+You can launch a graphical user interface - powered by  [Streamlit](https://streamlit.io/) - for your compatible function. The UI is auto-generated from the input- and output-schema of the given function.
+
+```bash
+opyrator launch-ui my_opyrator:hello_world
+```
+
+_TODO: Screenshot_
+
+_💡 Make sure that all requirements of your script are installed in the active Python environment._
+
+You can influence most aspects of the UI just by changing and improving the input- and output-schema of your function. Furthermore, it is also possible to define custom UIs for the function input and output. For more details, refer to the [input- and output-schema](#TODO) section.
+
+The port and host used by the UI server can be provided via CLI arguments:
+
+```bash
+opyrator launch-ui my_opyrator:hello_world --port 8080 --host "0.0.0.0"
+```
+
+The UI server can also be started via the exported zip-file format (see [zip export section](#zip-export) below).
+
+```bash
+opyrator launch-ui my-opyrator.zip
+```
+
+In addition, the UI server can be started by using an already running Opyrator API endpoint:
+
+```bash
+opyrator launch-ui http://my-opyrator:8080 
+```
+
+Thereby, all Opyrator calls from the UI will be executed via the configured HTTP endpoint instead of the Python function running inside the UI server.
+
+### Command-line Interface
+
+An Opyrator can also be executed via command-line:
+
+```bash
+opyrator call my_opyrator:hello_world '{"text": "hello", "wait": 1}'
+```
+
+The CLI interface also works using the [zip export format](#zip-export):
+
+```bash
+opyrator call my-opyrator.zip '{"text": "hello", "wait": 1}'
+```
+
+Or, by using an already running Opyrator API endpoint:
+
+```bash
+opyrator call http://my-opyrator:8080 '{"text": "hello", "wait": 1}'
+```
+
+Thereby, the function call is executed by the Opyrator API server, instead of locally using the Python function.
+
+### ZIP Export
+
+### Docker Export
+
+### Python Client
+
+### Pre-defined Interfaces
+
+- For common tasks.
 
 ## Documentation
 
-_Either put the documentation here or use a deployed documentation site via mkdocs and link to the documentation._
-
-Please refer to [our documentation](#TODO) for information about deployment or usage.
-
-## FAQ
-
-<details>
-<summary><b>This is the example description of an faq item</b> (click to expand...)</summary>
-</details>
-
-## Known Issues
-
-<details>
-<summary><b>This is the example description of a known issue</b> (click to expand...)</summary>
-</details>
+### Input- and Output-Schema
 
 ## Contribution
 
