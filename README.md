@@ -114,7 +114,7 @@ This project is maintained by [Benjamin Räthlein](https://twitter.com/raethlein
 
 ### REST API
 
-With Opyrator, you can instantly launch a local HTTP (REST) API server for any compatible function (callable), e.g.:
+With Opyrator, you can instantly launch a local HTTP (REST) API server for any compatible function (callable):
 
 ```bash
 opyrator launch-api my_opyrator:hello_world
@@ -198,7 +198,22 @@ Thereby, the function call is executed by the Opyrator API server, instead of lo
 
 ### ZIP Export
 
+Opyrator allows you to package and export a compatible function into a self-contained ZIP file:
+
+```bash
+opyrator export my_opyrator:hello_world my-opyrator.zip
+```
+
+This ZIP file packages relevant source code and data artifacts into a single file which can be shared, stored, and used for launching the API or UI as shown above. External requirements are automatically discovered from the working directory based on the following files: `Pipfile` (Pipenv environment), `environment.yml` (Conda environment), `pyproject.toml` (Poetry dependencies), `requirements.txt` (PIP requirements), `setup.py` (Python project requirements), `packages.txt` (apt-get packages), or discovered via [pipreqs](https://github.com/bndr/pipreqs) as fallback. However, external requirements are only included as instructions and are not packaged into the ZIP file. If you want export your Opyrator fully self-contained including all  requirements or even the Python interpreter itself, please refer to the [Docker](#docker-export) or [PEX](#pex-export) export options.
+
 ### Docker Export
+
+In addition,
+```bash
+opyrator export my_opyrator:hello_world --docker my-opyrator-image:latest
+```
+
+The Docker image 
 
 ### PEX Export
 
