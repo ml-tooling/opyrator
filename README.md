@@ -57,11 +57,11 @@ pip install opyrator
     from pydantic import BaseModel
     import time
 
-    def Input(BaseModel):
+    class Input(BaseModel):
         text: str
         wait: int
 
-    def Output(BaseModel):
+    class Output(BaseModel):
         text: str
 
     def hello_world(input: Input) -> Output:
@@ -107,10 +107,9 @@ This project is maintained by [Benjamin Räthlein](https://twitter.com/raethlein
 <p align="center">
   <a href="#rest-api">REST API</a> •
   <a href="#graphical-ui">Graphical UI</a> •
-  <a href="#command-line interface">CLI</a> •
+  <a href="#command-line-interface">CLI</a> •
   <a href="#zip-export">ZIP Export</a> •
   <a href="#docker-export">Docker Export</a> •
-  <a href="#python-client">Python Client</a> •
   <a href="#pre-defined-interfaces">Pre-defined Interfaces</a> •
   <a href="#production-deployment">Production Deployment</a>
 </p>
@@ -129,10 +128,10 @@ _TODO: Add Screenshot_
 
 _💡 Make sure that all requirements of your script are installed in the active Python enviornment._
 
-The port and host used by the API server can be provided via CLI arguments:
+The port used by the API server can be provided via CLI arguments:
 
 ```bash
-opyrator launch-api my_opyrator:hello_world --port 8080 --host "0.0.0.0"
+opyrator launch-api my_opyrator:hello_world --port 8080
 ```
 
 The API server can also be started via the exported zip-file format (see [zip export section](#zip-export) below).
@@ -155,10 +154,10 @@ _💡 Make sure that all requirements of your script are installed in the active
 
 You can influence most aspects of the UI just by changing and improving the input- and output-schema of your function. Furthermore, it is also possible to define custom UIs for the function's input and output. For more details, refer to the [input- and output-schema](#TODO) section.
 
-The port and host used by the UI server can be provided via CLI arguments:
+The port used by the UI server can be provided via CLI arguments:
 
 ```bash
-opyrator launch-ui my_opyrator:hello_world --port 8080 --host "0.0.0.0"
+opyrator launch-ui my_opyrator:hello_world --port 8080
 ```
 
 The UI server can also be started via the exported zip-file format (see [zip export section](#zip-export) below).
@@ -207,11 +206,11 @@ Opyrator allows you to package and export a [compatible function](#compatible-fu
 opyrator export my_opyrator:hello_world my-opyrator.zip
 ```
 
-This exported ZIP file packages relevant source code and data artifacts into a single file which can be shared, stored, and used for launching the API or UI as shown above. 
+This exported ZIP file packages relevant source code and data artifacts into a single file which can be shared, stored, and used for launching the API or UI as shown above.
 
-External requirements are automatically discovered from the working directory based on the following files: `Pipfile` (Pipenv environment), `environment.yml` (Conda environment), `pyproject.toml` (Poetry dependencies), `requirements.txt` (PIP requirements), `setup.py` (Python project requirements), `packages.txt` (apt-get packages), or discovered via [pipreqs](https://github.com/bndr/pipreqs) as fallback. However, external requirements are only included as instructions and are not packaged into the ZIP file. If you want export your Opyrator fully self-contained including all requirements or even the Python interpreter itself, please refer to the [Docker](#docker-export) or [PEX](#pex-export) export options.
+External requirements are automatically discovered from the working directory based on the following files: `Pipfile` (Pipenv environment), `environment.yml` (Conda environment), `pyproject.toml` (Poetry dependencies), `requirements.txt` (PIP requirements), `setup.py` (Python project requirements), `packages.txt` (apt-get packages), or discovered via [pipreqs](https://github.com/bndr/pipreqs) as fallback. However, external requirements are only included as instructions and are not packaged into the ZIP file. If you want to export your Opyrator fully self-contained including all requirements or even the Python interpreter itself, please refer to the [Docker](#docker-export) or [PEX](#pex-export) export options.
 
-As a side note, Opyrators exported as ZIP files are (mini) Python libraries which can be pip-installed, imported, and used from other Python code:
+As a side note, Opyrators exported as ZIP files are (mini) Python libraries that can be pip-installed, imported, and used from other Python code:
 
 ```bash
 pip install my-opyrator.zip
@@ -235,13 +234,13 @@ After the successful export, the Docker image can be run as shown below:
 docker run -p 8080:8080 my-opyrator-image:latest
 ```
 
-Running your Opyrator within this Docker image has the advantage that only a single port is required to be exposed. The speration between UI and API is done via URL paths: `http://localhost:8080/api` (API); `http://localhost:8080/ui` (UI). The UI is automatically configured to use the API for all function calls.
+Running your Opyrator within this Docker image has the advantage that only a single port is required to be exposed. The separation between UI and API is done via URL paths: `http://localhost:8080/api` (API); `http://localhost:8080/ui` (UI). The UI is automatically configured to use the API for all function calls.
 
 _WIP: This feature is not finalized yet. You can track the progress and vote for the feature [here](#TODO)._
 
 ### PEX Export
 
-In addition to the ZIP export, Opyrator also provides the capability to export to a PEX file. [PEX](https://github.com/pantsbuild/pex) is a tool to create self-contained executable Python environments that contain all relevant python dependencies.
+Opyrator also provides the capability to export to a PEX file. [PEX](https://github.com/pantsbuild/pex) is a tool to create self-contained executable Python environments that contain all relevant python dependencies.
 
 ```bash
 opyrator export my_opyrator:hello_world --pex my-opyrator.pex
@@ -254,7 +253,7 @@ _WIP: This feature is not finalized yet. You can track the progress and vote for
 Every deployed Opyrator provides a Python client library via an endpoint method which can be installed with pip:
 
 ```bash
-pip intall http://my-opyrator:8080/client
+pip install http://my-opyrator:8080/client
 ```
 
 And used in your code, as shown below:
@@ -269,7 +268,7 @@ _WIP: This feature is not finalized yet. You can track the progress and vote for
 
 ### Pre-defined Interfaces
 
-Opyrator provides a growing collection of predefined interfaces (input- and output schemas) for common tasks. Some of these interfaces also provide more advanced UIs and Visualizations. You can reuse these schemas to speed up your development and, thereby, also keep your Opyrators compatible to other functionality improvements or other Opyrators.
+Opyrator provides a growing collection of pre-defined interfaces (input- and output schemas) for common tasks. Some of these interfaces also provide more advanced UIs and Visualizations. You can reuse these schemas to speed up your development and, thereby, also keep your Opyrators compatible to other functionality improvements or other Opyrators.
 
 You can find some of the available interfaces in the [examples](#examples) section or in this [source code package](#TODO).
 
@@ -277,7 +276,7 @@ _WIP: This feature is not finalized yet. You can track the progress and vote for
 
 ### Production Deployment
 
-Rolling out your Opyrators for production usage might require additional features such as SSL, authentication, API tokens, unlimited scalability, load balancing, and monitoring. Therefore, we provide capabilties to easily  deploy your Opyrators directly on scalable and secure cloud platforms without any major overhead:
+Rolling out your Opyrators for production usage might require additional features such as SSL, authentication, API tokens, unlimited scalability, load balancing, and monitoring. Therefore, we provide capabilities to easily  deploy your Opyrators directly on scalable and secure cloud platforms without any major overhead:
 
 ```bash
 opyrator deploy my_opyrator:hello_world <deployment-provider> <deployment-provider-options>
@@ -291,7 +290,7 @@ _WIP: This feature is not finalized yet. You can track the progress and vote for
 
 A function is compatible with Opyrator if it fullfills the following requirements:
 
-- A single paramter called `input` which MUST be a subclass of the [Pydantic BaseModel](https://pydantic-docs.helpmanual.io/usage/models/).
+- A single parameter called `input` which MUST be a subclass of the [Pydantic BaseModel](https://pydantic-docs.helpmanual.io/usage/models/).
 - A single return value which MUST be a subclass of the [Pydantic BaseModel](https://pydantic-docs.helpmanual.io/usage/models/).
 - The `input` parameter and return value MUST be annotated with Python typing hints.
 
@@ -306,6 +305,10 @@ _TODO: Add mapping table between JSON Schema and UI elements._
 ### Command-line Interface
 
 _TODO: Add `help` output of CLI_
+
+## Examples
+
+_TODO: Add examples_
 
 ## Contribution
 

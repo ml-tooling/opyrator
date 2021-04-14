@@ -11,3 +11,6 @@ this-package = {editable = true, extras = ["dev"], path = "."}
 
 [pipenv]
 allow_prereleases = true
+
+[scripts]
+install-kernel = "python -m ipykernel install --user --name=opyrator-pipenv"

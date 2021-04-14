@@ -47,8 +47,14 @@ setup(
     zip_safe=False,
     install_requires=[
         "typer",
-        # "fastapi",
-        # "uvicorn",
+        "fastapi",
+        "uvicorn",
+        "streamlit",
+        "plotly",
+        # Not required anymore
+        # "typing_utils",
+        "pandas",
+        "numpy",
     ],
     # deprecated: dependency_links=dependency_links,
     extras_require={
