@@ -33,7 +33,7 @@ _Alpha Version: This is still under heavy development and only suggested for exp
 ## Highlights
 
 - 🪄&nbsp; Turn functions into production-ready services within seconds.
-- 🔌&nbsp; Auto-generated HTTP REST API based on FastAPI.
+- 🔌&nbsp; Auto-generated HTTP API based on FastAPI.
 - 🌅&nbsp; Auto-generated Web UI based on Streamlit.
 - 📦&nbsp; Save and share as self-contained executable file or Docker image.
 - 🧩&nbsp; Reuse pre-defined interfaces & combine with existing Opyrators.
