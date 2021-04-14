@@ -1,5 +1,4 @@
 import datetime
-import os
 import sys
 from tempfile import NamedTemporaryFile
 from typing import Any, Dict, List, Type

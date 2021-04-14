@@ -1,4 +1,7 @@
-"""Hack to add per-session state to Streamlit."""
+"""Hack to add per-session state to Streamlit.
+
+Based on: https://gist.github.com/tvst/036da038ab3e999a64497f42de966a92
+"""
 
 try:
     import streamlit.ReportThread as ReportThread
@@ -73,17 +76,14 @@ def get_current_session() -> ReportSession:  # type: ignore
     for session_info in session_infos:
         s = session_info.session
         if (
-            # Streamlit < 0.54.0
-            (hasattr(s, "_main_dg") and s._main_dg == ctx.main_dg)
-            or
-            # Streamlit >= 0.54.0
-            (not hasattr(s, "_main_dg") and s.enqueue == ctx.enqueue)
-            or
-            # Streamlit >= 0.65.2
-            (
+            (hasattr(s, "_main_dg") and s._main_dg == ctx.main_dg)  # Streamlit < 0.54.0
+            or (
+                not hasattr(s, "_main_dg") and s.enqueue == ctx.enqueue
+            )  # Streamlit >= 0.54.0
+            or (
                 not hasattr(s, "_main_dg")
                 and s._uploaded_file_mgr == ctx.uploaded_file_mgr
-            )
+            )  # Streamlit >= 0.65.2
         ):
             this_session = s
     if this_session is None:
@@ -98,24 +98,6 @@ def get_session_state(**kwargs: Any) -> SessionState:
     """Gets a SessionState object for the current session.
 
     Creates a new object if necessary.
-    Parameters
-    ----------
-    **kwargs : any
-        Default values you want to add to the session state, if we're creating a
-        new one.
-    Example
-    -------
-    >>> session_state = get(user_name='', favorite_color='black')
-    >>> session_state.user_name
-    ''
-    >>> session_state.user_name = 'Mary'
-    >>> session_state.favorite_color
-    'black'
-    Since you set user_name above, next time your script runs this will be the
-    result:
-    >>> session_state = get(user_name='', favorite_color='black')
-    >>> session_state.user_name
-    'Mary'
     """
     this_session = get_current_session()
     # Got the session object! Now let's attach some state into it.
