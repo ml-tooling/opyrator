@@ -1,7 +1,10 @@
 import datetime
+import inspect
+import mimetypes
 import sys
+from os import getcwd
 from tempfile import NamedTemporaryFile
-from typing import Any, Dict, List, Type
+from typing import Any, Callable, Dict, List, Type
 
 import pandas as pd
 import streamlit as st
@@ -9,26 +12,51 @@ from fastapi.encoders import jsonable_encoder
 from pydantic import BaseModel, ValidationError, parse_obj_as
 
 from opyrator import Opyrator
+from opyrator.core import name_to_title
 from opyrator.ui import schema_utils, streamlit_utils
 from opyrator.ui.streamlit_utils import CUSTOM_STREAMLIT_CSS, SessionState
-from opyrator.utils.system_utils import run_command
 
 STREAMLIT_RUNNER_SNIPPET = """
 from opyrator.ui import render_streamlit_ui
 from opyrator import Opyrator
 
-render_streamlit_ui(Opyrator("{opyrator_path}"))
+import streamlit as st
+
+st.set_page_config(page_title="Opyrator", page_icon=":arrow_forward:")
+
+with st.spinner("Loading Opyrator. Please wait..."):
+    opyrator = Opyrator("{opyrator_path}")
+
+render_streamlit_ui(opyrator)
 """
 
 
 def launch_ui(opyrator_path: str, port: int = 8501) -> None:
+    # import streamlit.bootstrap as bootstrap
+    # from streamlit.cli import _get_command_line_as_string
+    # print(_get_command_line_as_string())
     with NamedTemporaryFile(suffix=".py", mode="w", encoding="utf-8") as f:
         f.write(STREAMLIT_RUNNER_SNIPPET.format(opyrator_path=opyrator_path))
         f.seek(0)
+
         # TODO: PYTHONPATH="$PYTHONPATH:/workspace/opyrator/src"
-        run_command(
-            f"{sys.executable} -m streamlit run --server.port={port} --server.headless=True --runner.magicEnabled=False {f.name}"
+        import subprocess
+
+        subprocess.run(
+            f'PYTHONPATH="$PYTHONPATH:{getcwd()}" {sys.executable} -m streamlit run --server.port={port} --server.headless=True --runner.magicEnabled=False --server.maxUploadSize=50 {f.name}',
+            shell=True,
         )
+
+
+def function_has_named_arg(func: Callable, parameter: str) -> bool:
+    try:
+        sig = inspect.signature(func)
+        for param in sig.parameters.values():
+            if param.name == "input":
+                return True
+    except Exception:
+        return False
+    return False
 
 
 def has_output_ui_renderer(data_item: BaseModel) -> bool:
@@ -37,6 +65,18 @@ def has_output_ui_renderer(data_item: BaseModel) -> bool:
 
 def has_input_ui_renderer(input_class: Type[BaseModel]) -> bool:
     return hasattr(input_class, "render_input_ui")
+
+
+def is_compatible_audio(mime_type: str) -> bool:
+    return mime_type in ["audio/mpeg", "audio/ogg", "audio/wav"]
+
+
+def is_compatible_image(mime_type: str) -> bool:
+    return mime_type in ["image/png", "image/jpeg"]
+
+
+def is_compatible_video(mime_type: str) -> bool:
+    return mime_type in ["video/mp4"]
 
 
 class InputUI:
@@ -72,7 +112,7 @@ class InputUI:
 
             if not property.get("title"):
                 # Set property key as fallback title
-                property["title"] = property_key
+                property["title"] = name_to_title(property_key)
 
             if property_key in required_properties:
                 streamlit_app = st
@@ -190,13 +230,28 @@ class InputUI:
         self, streamlit_app: st, key: str, property: Dict
     ) -> Any:
         streamlit_kwargs = self._get_default_streamlit_input_kwargs(key, property)
+        file_extension = None
+        if "mime_type" in property:
+            file_extension = mimetypes.guess_extension(property["mime_type"])
+
         uploaded_file = streamlit_app.file_uploader(
-            **streamlit_kwargs, accept_multiple_files=False
+            **streamlit_kwargs, accept_multiple_files=False, type=file_extension
         )
-        if uploaded_file is not None:
-            return uploaded_file.getvalue()
-        else:
+        if uploaded_file is None:
             return None
+
+        bytes = uploaded_file.getvalue()
+        if property.get("mime_type"):
+            if is_compatible_audio(property["mime_type"]):
+                # Show audio
+                streamlit_app.audio(bytes, format=property.get("mime_type"))
+            if is_compatible_image(property["mime_type"]):
+                # Show image
+                streamlit_app.image(bytes)
+            if is_compatible_video(property["mime_type"]):
+                # Show video
+                streamlit_app.video(bytes, format=property.get("mime_type"))
+        return bytes
 
     def _render_single_string_input(
         self, streamlit_app: st, key: str, property: Dict
@@ -205,6 +260,10 @@ class InputUI:
 
         if property.get("default"):
             streamlit_kwargs["value"] = property.get("default")
+        elif property.get("example"):
+            # TODO: also use example for other property types
+            # Use example as value if it is provided
+            streamlit_kwargs["value"] = property.get("example")
 
         if property.get("maxLength") is not None:
             streamlit_kwargs["max_chars"] = property.get("maxLength")
@@ -329,8 +388,13 @@ class InputUI:
         self, streamlit_app: st, key: str, property: Dict
     ) -> Any:
         streamlit_kwargs = self._get_default_streamlit_input_kwargs(key, property)
+
+        file_extension = None
+        if "mime_type" in property:
+            file_extension = mimetypes.guess_extension(property["mime_type"])
+
         uploaded_files = streamlit_app.file_uploader(
-            **streamlit_kwargs, accept_multiple_files=True
+            **streamlit_kwargs, accept_multiple_files=True, type=file_extension
         )
         uploaded_files_bytes = []
         if uploaded_files:
@@ -394,6 +458,7 @@ class InputUI:
                 streamlit_kwargs["value"] = number_transform(streamlit_kwargs["step"])
 
         if "min_value" in streamlit_kwargs and "max_value" in streamlit_kwargs:
+            # TODO: Only if less than X steps
             return streamlit_app.slider(**streamlit_kwargs)
         else:
             return streamlit_app.number_input(**streamlit_kwargs)
@@ -405,7 +470,7 @@ class InputUI:
             property = properties[property_key]
             if not property.get("title"):
                 # Set property key as fallback title
-                property["title"] = property_key
+                property["title"] = name_to_title(property_key)
             # construct full key based on key parts -> required later to get the value
             full_key = key + "." + property_key
             object_inputs[property_key] = self._render_property(
@@ -563,8 +628,9 @@ class InputUI:
 
 
 class OutputUI:
-    def __init__(self, output_data: Any):
+    def __init__(self, output_data: Any, input_data: Any):
         self._output_data = output_data
+        self._input_data = input_data
 
     def render_ui(self) -> None:
         try:
@@ -591,6 +657,46 @@ class OutputUI:
         else:
             streamlit.code(str(value), language="plain")
 
+    def _render_single_file_property(
+        self, streamlit: st, property_schema: Dict, value: Any
+    ) -> None:
+        # Add title and subheader
+        streamlit.subheader(property_schema.get("title"))
+        if property_schema.get("description"):
+            streamlit.markdown(property_schema.get("description"))
+        if value is None or value == "":
+            streamlit.info("No value returned!")
+        else:
+            # TODO: Detect if it is a FileContent instance
+            # TODO: detect if it is base64
+            file_extension = ""
+            if "mime_type" in property_schema:
+                mime_type = property_schema["mime_type"]
+                file_extension = mimetypes.guess_extension(mime_type) or ""
+
+                if is_compatible_audio(mime_type):
+                    streamlit.audio(value.as_bytes(), format=mime_type)
+                    return
+
+                if is_compatible_image(mime_type):
+                    streamlit.image(value.as_bytes())
+                    return
+
+                if is_compatible_video(mime_type):
+                    streamlit.video(value.as_bytes(), format=mime_type)
+                    return
+
+            filename = (
+                (property_schema["title"] + file_extension)
+                .lower()
+                .strip()
+                .replace(" ", "-")
+            )
+            streamlit.markdown(
+                f'<a href="data:application/octet-stream;base64,{value}" download="{filename}"><input type="button" value="Download File"></a>',
+                unsafe_allow_html=True,
+            )
+
     def _render_single_complex_property(
         self, streamlit: st, property_schema: Dict, value: Any
     ) -> None:
@@ -603,7 +709,11 @@ class OutputUI:
 
     def _render_single_output(self, streamlit: st, output_data: BaseModel) -> None:
         if has_output_ui_renderer(output_data):
-            output_data.render_output_ui(streamlit)  # type: ignore
+            if function_has_named_arg(output_data.render_output_ui, "input"):  # type: ignore
+                # render method also requests the input data
+                output_data.render_output_ui(streamlit, input=self._input_data)  # type: ignore
+            else:
+                output_data.render_output_ui(streamlit)  # type: ignore
             return
 
         model_schema = output_data.schema(by_alias=False)
@@ -632,6 +742,12 @@ class OutputUI:
                     continue
 
                 if property_schema:
+                    if schema_utils.is_single_file_property(property_schema):
+                        self._render_single_file_property(
+                            streamlit, property_schema, output_property_value
+                        )
+                        continue
+
                     if (
                         schema_utils.is_single_string_property(property_schema)
                         or schema_utils.is_single_number_property(property_schema)
@@ -694,7 +810,9 @@ def render_streamlit_ui(opyrator: Opyrator) -> None:
     if "opyrator" not in opyrator.name.lower():
         title += " - Opyrator"
 
-    st.set_page_config(page_title=title, page_icon=":arrow_forward:")
+    # Page config can only be setup once
+    # st.set_page_config(page_title="Opyrator", page_icon=":arrow_forward:")
+
     st.title(title)
 
     # Add custom css settings
@@ -721,8 +839,11 @@ def render_streamlit_ui(opyrator: Opyrator) -> None:
     if execute_selected:
         with st.spinner("Executing operation. Please wait..."):
             try:
-                input_obj = parse_obj_as(opyrator.input_type, session_state.input_data)
-                session_state.output_data = opyrator(input=input_obj)
+                input_data_obj = parse_obj_as(
+                    opyrator.input_type, session_state.input_data
+                )
+                session_state.output_data = opyrator(input=input_data_obj)
+                session_state.latest_operation_input = input_data_obj  # should this really be saved as additional session object?
             except ValidationError as ex:
                 st.error(ex)
             else:
@@ -730,7 +851,9 @@ def render_streamlit_ui(opyrator: Opyrator) -> None:
                 pass
 
     if session_state.output_data:
-        OutputUI(session_state.output_data).render_ui()
+        OutputUI(
+            session_state.output_data, session_state.latest_operation_input
+        ).render_ui()
         st.markdown("---")
 
         show_json = st.empty()

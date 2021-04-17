@@ -96,6 +96,9 @@ def get_callable(import_string: str) -> Callable:
         # Use dot as seperator
         callable_seperator = "."
 
+    if callable_seperator not in import_string:
+        raise ValueError("The callable path MUST specify the function. ")
+
     mod_name, callable_name = import_string.rsplit(callable_seperator, 1)
     mod = importlib.import_module(mod_name)
     return getattr(mod, callable_name)

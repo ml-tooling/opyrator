@@ -33,6 +33,7 @@ class SessionState(object):
         self._run_id = 0
         self._input_data: Dict = {}
         self._output_data: Any = None
+        self._latest_operation_input: Any = None
 
         for key, val in kwargs.items():
             setattr(self, key, val)
@@ -53,11 +54,20 @@ class SessionState(object):
     def output_data(self, output_data: Any) -> None:
         self._output_data = output_data
 
+    @property
+    def latest_operation_input(self) -> Any:
+        return self._latest_operation_input
+
+    @latest_operation_input.setter
+    def latest_operation_input(self, latest_operation_input: Any) -> None:
+        self._latest_operation_input = latest_operation_input
+
     def clear(self) -> None:
         # Clear should higher the run ID to reset all widgets using this within their key
         self._run_id += 1
         self._input_data = {}
         self._output_data = None
+        self._latest_operation_input = None
 
 
 def get_current_session() -> ReportSession:  # type: ignore
