@@ -1,0 +1,2 @@
+spacy
+st-annotated-text
