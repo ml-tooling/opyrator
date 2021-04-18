@@ -116,6 +116,9 @@ def main(args: dict) -> None:
         # build_utils.run("curl -s https://codecov.io/bash | bash -s", exit_on_error=False)
         pass
 
+    # Build the opyrator playground component
+    build_utils.build("playground", args)
+
 
 if __name__ == "__main__":
     args = build_python.parse_arguments()
