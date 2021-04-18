@@ -23,7 +23,9 @@ class ImageSuperResolutionOutput(BaseModel):
     )
 
 
-def upscale_image(input: ImageSuperResolutionInput) -> ImageSuperResolutionOutput:
+def image_super_resolution(
+    input: ImageSuperResolutionInput,
+) -> ImageSuperResolutionOutput:
     """Upscale and improve the quality of low resolution images.
 
     This opyrator uses the [image-super-resolution](https://github.com/idealo/image-super-resolution) library.

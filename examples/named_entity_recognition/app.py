@@ -37,6 +37,7 @@ class NamedEntitiesOutput(BaseModel):
     __root__: List[NamedEntity]
 
     def render_output_ui(self, streamlit, input) -> None:  # type: ignore
+        """Custom output UI. If this method is implmeneted, it will be used"""
         from annotated_text import annotated_text
 
         TYPE_TO_COLOR = {
@@ -69,7 +70,7 @@ class NamedEntitiesOutput(BaseModel):
         annotated_text(*text_parts)
 
 
-def recognize_named_entities(input: TextInput) -> NamedEntitiesOutput:
+def named_entity_recognition(input: TextInput) -> NamedEntitiesOutput:
     doc = nlp(input.text)
     results = []
     for ent in doc.ents:

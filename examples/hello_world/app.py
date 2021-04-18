@@ -10,5 +10,5 @@ class Output(BaseModel):
 
 
 def hello_world(input: Input) -> Output:
-    """Return the `message` of the input data."""
+    """Returns the `message` of the input data."""
     return Output(message=input.message)

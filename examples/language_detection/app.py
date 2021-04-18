@@ -15,11 +15,10 @@ if not os.path.exists(PRETRAINED_MODEL_PATH):
         PRETRAINED_MODEL_PATH,
     )
 
-# Load Model
+# Load pretrained language model
 model = fasttext.load_model(PRETRAINED_MODEL_PATH)
 
 
-# Input / output data models
 class TextClassificationInput(BaseModel):
     inputs: str = Field(
         ..., title="Text Input", description="The input text to be classified."
