@@ -1,11 +1,8 @@
-import time
-
 from pydantic import BaseModel
 
 
 class Input(BaseModel):
     message: str
-    wait: int
 
 
 class Output(BaseModel):
@@ -13,6 +10,5 @@ class Output(BaseModel):
 
 
 def hello_world(input: Input) -> Output:
-    """Echo the provided `message` after a configurable `wait` time."""
-    time.sleep(input.wait)
+    """Return the `message` of the input data."""
     return Output(message=input.message)

@@ -43,11 +43,6 @@ def seperate_audio(input: AudioSeperationInput) -> AudioSeperationOutput:
                 shell=True,
             )
 
-            # Using embedded configuration.
-            # separator = Separator("spleeter:2stems")
-            # separator.separate_to_file(
-            #     audio_file.name, tmp_dir, filename_format="{instrument}.{codec}"
-            # )
             vocals_file = None
 
             with open(os.path.join(tmp_dir, "vocals.wav"), "rb") as f:

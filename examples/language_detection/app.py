@@ -2,15 +2,13 @@ import os
 import urllib.request
 
 import fasttext
+from pydantic import BaseModel, Field
 
-from opyrator.tasks.text_classification import (
-    TextClassificationInput,
-    TextClassificationOutput,
-)
+from opyrator import outputs
 
 PRETRAINED_MODEL_PATH = "./lid.176.ftz"
 
-# Download model if it does not exist
+# Download language detection model if it does not exist
 if not os.path.exists(PRETRAINED_MODEL_PATH):
     urllib.request.urlretrieve(
         "https://dl.fbaipublicfiles.com/fasttext/supervised-models/lid.176.ftz",
@@ -21,7 +19,14 @@ if not os.path.exists(PRETRAINED_MODEL_PATH):
 model = fasttext.load_model(PRETRAINED_MODEL_PATH)
 
 
-def detect_language(input: TextClassificationInput) -> TextClassificationOutput:
+# Input / output data models
+class TextClassificationInput(BaseModel):
+    inputs: str = Field(
+        ..., title="Text Input", description="The input text to be classified."
+    )
+
+
+def detect_language(input: TextClassificationInput) -> outputs.ClassificationOutput:
     """Detect the language of a given text via a Fasttext model."""
 
     predictions = model.predict([input.inputs], k=5)
@@ -31,4 +36,4 @@ def detect_language(input: TextClassificationInput) -> TextClassificationOutput:
         for scored_label in zip(predictions[0][0], predictions[1][0])
     ]
 
-    return TextClassificationOutput.parse_obj(scored_labels)
+    return outputs.ClassificationOutput.parse_obj(scored_labels)

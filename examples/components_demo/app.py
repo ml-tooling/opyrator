@@ -17,7 +17,7 @@ class OtherData(BaseModel):
     integer: int
 
 
-class DemoModel(BaseModel):
+class ShowcaseModel(BaseModel):
     short_text: str = Field(..., max_length=60, description="Short text property")
     password: SecretStr = Field(..., description="Password text property")
     long_text: str = Field(..., description="Unlimited text property")
@@ -40,7 +40,6 @@ class DemoModel(BaseModel):
         datetime.datetime.now().time(),
         description="Time property. Optional because of default value.",
     )
-    # datetime: Optional[datetime.datetime] = Field(..., description="Datetime property")
     string_list: List[str] = Field(
         ..., max_items=20, description="List of string values"
     )
@@ -69,7 +68,7 @@ class DemoModel(BaseModel):
     multi_selection: Set[SelectionValue] = Field(
         ..., description="Allows multiple items from a set."
     )
-    object: OtherData = Field(
+    single_object: OtherData = Field(
         ...,
         description="Another object embedded into this model.",
     )
@@ -79,7 +78,7 @@ class DemoModel(BaseModel):
     )
 
 
-def showcase_components(input: DemoModel) -> DemoModel:
+def showcase_components(input: ShowcaseModel) -> ShowcaseModel:
     """Showcase of a variety of differnt property types and how they are shown in the UI.
 
     This function only returns the input data.

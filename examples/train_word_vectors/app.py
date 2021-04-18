@@ -37,26 +37,9 @@ class WordVectorTrainingInput(BaseModel):
     min_count: int = Field(1, ge=1, description="Minimal number of word occurrences.")
     loss_function: LossFunction = Field(LossFunction.NS, title="Loss Function")
 
-    # def render_output_ui(self, streamlit):
-    #     import umap
-    #     import umap.plot
-    #     from sklearn.datasets import load_digits
-
-    #     digits = load_digits()
-
-    #     mapper = umap.UMAP().fit(digits.data)
-    #     p = umap.plot.interactive(mapper, labels=digits.target)
-    #     streamlit.bokeh_chart(p, use_container_width=True)
-
 
 class WordVectorTrainingOutput(BaseModel):
     vector_file: FileContent
-
-    def render_output_ui(self, streamlit) -> None:  # type: ignore
-        streamlit.markdown(
-            f'<a href="data:application/octet-stream;base64,{self.vector_file}" download="model.vec"><input type="button" value="Download Trained Vectors"></a>',
-            unsafe_allow_html=True,
-        )
 
 
 def train_word_vectors(input: WordVectorTrainingInput) -> WordVectorTrainingOutput:

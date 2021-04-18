@@ -854,6 +854,7 @@ def render_streamlit_ui(opyrator: Opyrator) -> None:
         OutputUI(
             session_state.output_data, session_state.latest_operation_input
         ).render_ui()
+
         st.markdown("---")
 
         show_json = st.empty()
