@@ -99,7 +99,7 @@ with st.beta_expander("Export this Opyrator"):
         )
 
 if open_ui:
-    open_link(f"./{selected_demo}/ui")
+    open_link(f"../{selected_demo}_ui")
 
 if open_api:
-    open_link(f"./{selected_demo}/api")
+    open_link(f"../{selected_demo}_api")

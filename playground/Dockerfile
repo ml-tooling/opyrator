@@ -62,7 +62,8 @@ RUN \
         curl \
         wget \
         # zlibc \
-        zlib1g-dev && \
+        zlib1g-dev \
+        git && \
     # Fix all execution permissions
     chmod -R a+rwx /usr/local/bin/ && \
     # configure dynamic linker run-time bindings
@@ -85,7 +86,7 @@ RUN \
     apt-get purge -y nginx nginx-common && \
     # libpcre required, otherwise you get a 'the HTTP rewrite module requires the PCRE library' error
     # Install apache2-utils to generate user:password file for nginx.
-    apt-get install -y libssl-dev libpcre3 libpcre3-dev apache2-utils && \
+    apt-get install -y libssl-dev libpcre3 libpcre3-dev apache2-utils zlib1g-dev && \
     wget --no-verbose https://openresty.org/download/openresty-$OPEN_RESTY_VERSION.tar.gz  -O ./openresty.tar.gz && \
     tar xfz ./openresty.tar.gz && \
     rm ./openresty.tar.gz && \
@@ -191,7 +192,13 @@ RUN \
     # Upgrade pip
     pip install --no-cache-dir --upgrade pip && \
     # Install streamlit
-    pip install --no-cache-dir streamlit
+    pip install --no-cache-dir streamlit && \
+    # Intsall bokeh, needed for streamlit open link hack
+    pip install --no-cache-dir bokeh && \
+    # Install PyTorch: Required by transformer demos
+    pip install torch==1.8.1+cpu -f https://download.pytorch.org/whl/torch_stable.html && \
+    # Cleanup
+    clean-layer.sh
 
 # Install opyrator from distribution
 # hadolint ignore=DL3010
@@ -205,14 +212,32 @@ COPY \
     resources/5xx.html \
     $RESOURCES_PATH/
 
+# Copy playground app to demos folder
+COPY resources/playground_app.py  $RESOURCES_PATH/demos/
+# Copy demos to demos folder
+COPY resources/demos/  $RESOURCES_PATH/demos/
+
+# Install ffmpeg for audio seperation demo
+RUN \
+    apt-get update && \
+    apt-get -y --no-install-recommends install ffmpeg && \
+    # Cleanup
+    clean-layer.sh
+
+COPY ./resources/scripts/install-demos.py $RESOURCES_PATH/install-demos.py
+RUN \
+    python $RESOURCES_PATH/install-demos.py && \
+    # Cleanup
+    clean-layer.sh
+
 # Configure nginx
 COPY resources/nginx/nginx.conf /etc/nginx/nginx.conf
 
 # Configure supervisor process
 COPY resources/supervisor/supervisord.conf /etc/supervisor/supervisord.conf
+# Copy all supervisor program definitions into workspace
+COPY resources/supervisor/programs/ /etc/supervisor/conf.d/
 
-# Configure supervisor process
-COPY resources/playground_app.py  $RESOURCES_PATH/demos/
 
 # use global option with tini to kill full process groups: https://github.com/krallin/tini#process-group-killing
 ENTRYPOINT ["/tini", "-g", "--"]
