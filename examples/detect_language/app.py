@@ -4,7 +4,7 @@ import urllib.request
 import fasttext
 from pydantic import BaseModel, Field
 
-from opyrator import outputs
+from opyrator.components import outputs
 
 PRETRAINED_MODEL_PATH = "./lid.176.ftz"
 

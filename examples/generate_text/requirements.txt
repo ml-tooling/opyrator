@@ -1,3 +1,3 @@
+opyrator
 transformers
 torch
-umap-learn[plot]

@@ -57,6 +57,7 @@ def train_word_vectors(input: WordVectorTrainingInput) -> WordVectorTrainingOutp
             epoch=input.epoch,
             minCount=input.min_count,
             loss=input.loss_function,
+            thread=1,  # only train with one thread to not block other demos
         )
 
         with NamedTemporaryFile(suffix=".vec", mode="w+b") as vec_file:
