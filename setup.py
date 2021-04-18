@@ -55,6 +55,7 @@ setup(
         # "typing_utils",
         "pandas",
         "numpy",
+        "loguru",
     ],
     # deprecated: dependency_links=dependency_links,
     extras_require={
