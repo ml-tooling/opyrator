@@ -1,4 +1,6 @@
+import glob
 import os
+import shutil
 
 from universal_build import build_utils
 from universal_build.helpers import build_python
@@ -33,6 +35,40 @@ def main(args: dict) -> None:
         )
         # Build distribution via setuptools
         build_python.build_distribution(exit_on_error=True)
+
+        # Copy distribution to playground
+        try:
+            dist_name = MAIN_PACKAGE.replace("_", "-")
+            dist_file = glob.glob(f"./dist/{dist_name}-*.tar.gz")[0]
+            shutil.copy(
+                dist_file,
+                os.path.join(HERE, "playground", "resources", dist_name + ".tar.gz"),
+            )
+        except Exception as ex:
+            build_utils.log(
+                "Failed to copy distribution to playground container " + str(ex)
+            )
+            build_utils.exit_process(1)
+
+        # Copy all Demo artifacts (only py and txt files for now)
+        files = []
+        for ext in ("*.py", "*.txt"):
+            files.extend(
+                glob.glob(os.path.join(HERE, "examples", "**", ext), recursive=True)
+            )
+
+        DEMO_PATH = os.path.join(HERE, "playground", "resources", "demos")
+        if os.path.exists(DEMO_PATH):
+            shutil.rmtree(DEMO_PATH)
+
+        for file in files:
+            new_path = os.path.join(
+                DEMO_PATH,
+                os.path.relpath(file, os.path.join(HERE, "examples")),
+            )
+            os.makedirs(os.path.dirname(new_path), exist_ok=True)
+
+            shutil.copy(file, new_path)
 
     if args.get(build_utils.FLAG_CHECK):
         build_python.code_checks(exit_on_error=True, safety=False)
