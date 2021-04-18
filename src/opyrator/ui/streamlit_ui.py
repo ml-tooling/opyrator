@@ -9,6 +9,7 @@ from typing import Any, Callable, Dict, List, Type
 import pandas as pd
 import streamlit as st
 from fastapi.encoders import jsonable_encoder
+from loguru import logger
 from pydantic import BaseModel, ValidationError, parse_obj_as
 
 from opyrator import Opyrator
@@ -708,13 +709,19 @@ class OutputUI:
         streamlit.json(jsonable_encoder(value))
 
     def _render_single_output(self, streamlit: st, output_data: BaseModel) -> None:
-        if has_output_ui_renderer(output_data):
-            if function_has_named_arg(output_data.render_output_ui, "input"):  # type: ignore
-                # render method also requests the input data
-                output_data.render_output_ui(streamlit, input=self._input_data)  # type: ignore
-            else:
-                output_data.render_output_ui(streamlit)  # type: ignore
-            return
+        try:
+            if has_output_ui_renderer(output_data):
+                if function_has_named_arg(output_data.render_output_ui, "input"):  # type: ignore
+                    # render method also requests the input data
+                    output_data.render_output_ui(streamlit, input=self._input_data)  # type: ignore
+                else:
+                    output_data.render_output_ui(streamlit)  # type: ignore
+                return
+        except Exception:
+            # Use default auto-generation methods if the custom rendering throws an exception
+            logger.exception(
+                "Failed to execute custom render_output_ui function. Using auto-generation instead"
+            )
 
         model_schema = output_data.schema(by_alias=False)
         model_properties = model_schema.get("properties")
