@@ -197,30 +197,30 @@ Thereby, the function call is executed by the Opyrator API server, instead of lo
 
 ### ZIP Export
 
-Opyrator allows you to package and export a [compatible function](#compatible-functions) into a self-contained ZIP file:
+Opyrator allows you to package and export a [compatible function](#compatible-functions) into a self-contained zip-file:
 
 ```bash
 opyrator export my_opyrator:hello_world my-opyrator.zip
 ```
 
-This exported ZIP file packages relevant source code and data artifacts into a single file which can be shared, stored, and used for launching the API or UI as shown above.
+This exported zip-file packages relevant source code and data artifacts into a single file which can be shared, stored, and used for launching the API or UI as shown above.
 
 External requirements are automatically discovered from the working directory based on the following files: `Pipfile` (Pipenv environment), `environment.yml` (Conda environment), `pyproject.toml` (Poetry dependencies), `requirements.txt` (PIP requirements), `setup.py` (Python project requirements), `packages.txt` (apt-get packages), or discovered via [pipreqs](https://github.com/bndr/pipreqs) as fallback. However, external requirements are only included as instructions and are not packaged into the ZIP file. If you want to export your Opyrator fully self-contained including all requirements or even the Python interpreter itself, please refer to the [Docker](#docker-export) or [PEX](#pex-export) export options.
 
-As a side note, Opyrators exported as ZIP files are (mini) Python libraries that can be pip-installed, imported, and used from other Python code:
+As a side note, Opyrators exported as zip-files are (mini) Python libraries that can be pip-installed, imported, and used from other Python code:
 
 ```bash
 pip install my-opyrator.zip
 ```
 
-_WIP: This feature is not finalized yet. You can track the progress and vote for the feature [here](#TODO)_
+_WIP: This feature is not finalized yet. You can track the progress and vote for the feature [here](https://github.com/ml-tooling/opyrator/issues/3)_
 
 ### Docker Export
 
 In addition to the ZIP export, Opyrator also provides the capability to export to a Docker image:
 
 ```bash
-opyrator export my_opyrator:hello_world --docker my-opyrator-image:latest
+opyrator export my_opyrator:hello_world --format=docker my-opyrator-image:latest
 ```
 
 _💡 The Docker export requires that Docker is installed on your machine._
@@ -233,17 +233,17 @@ docker run -p 8080:8080 my-opyrator-image:latest
 
 Running your Opyrator within this Docker image has the advantage that only a single port is required to be exposed. The separation between UI and API is done via URL paths: `http://localhost:8080/api` (API); `http://localhost:8080/ui` (UI). The UI is automatically configured to use the API for all function calls.
 
-_WIP: This feature is not finalized yet. You can track the progress and vote for the feature [here](#TODO)._
+_WIP: This feature is not finalized yet. You can track the progress and vote for the feature [here](https://github.com/ml-tooling/opyrator/issues/4)._
 
 ### PEX Export
 
 Opyrator also provides the capability to export to a PEX file. [PEX](https://github.com/pantsbuild/pex) is a tool to create self-contained executable Python environments that contain all relevant python dependencies.
 
 ```bash
-opyrator export my_opyrator:hello_world --pex my-opyrator.pex
+opyrator export my_opyrator:hello_world --format=pex my-opyrator.pex
 ```
 
-_WIP: This feature is not finalized yet. You can track the progress and vote for the feature [here](#TODO)._
+_WIP: This feature is not finalized yet. You can track the progress and vote for the feature [here](https://github.com/ml-tooling/opyrator/issues/5)._
 
 ### Python Client
 
@@ -279,7 +279,7 @@ Rolling out your Opyrators for production usage might require additional feature
 opyrator deploy my_opyrator:hello_world <deployment-provider> <deployment-provider-options>
 ```
 
-_WIP: This feature is not finalized yet. You can track the progress and vote for the feature [here](#TODO)._
+_WIP: This feature is not finalized yet. You can track the progress and vote for the feature [here](https://github.com/ml-tooling/opyrator/issues/6)._
 
 ## Documentation
 
