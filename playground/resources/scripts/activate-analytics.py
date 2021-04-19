@@ -63,9 +63,9 @@ size_before = os.stat(index_filename).st_size
 replace_in_file(index_filename, "<head>", "<head>" + tracking_code)
 size_after = os.stat(index_filename).st_size
 
-print("Inserted tracking code into:", index_filename)
-print("Size before:", size_before)
-print("Size after: ", size_after)
+# print("Inserted tracking code into:", index_filename)
+# print("Size before:", size_before)
+# print("Size after: ", size_after)
 
 # Insert meta tags for search & social preview.
 # Older info but good summary: https://css-tricks.com/essential-meta-tags-social-media/
@@ -88,6 +88,6 @@ size_before = os.stat(index_filename).st_size
 replace_in_file(index_filename, "<head>", "<head>" + META_TAGS)
 size_after = os.stat(index_filename).st_size
 
-print("Inserted meta tags into:", index_filename)
-print("Size before:", size_before)
-print("Size after: ", size_after)
+# print("Inserted meta tags into:", index_filename)
+# print("Size before:", size_before)
+# print("Size after: ", size_after)
