@@ -14,7 +14,7 @@ class FileContent(str):
         field_schema.update(format="byte")
 
     @classmethod
-    def __get_validators__(cls) -> "CallableGenerator":  # type: ignore
+    def __get_validators__(cls) -> Any:  # type: ignore
         yield cls.validate
 
     @classmethod
