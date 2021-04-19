@@ -6,7 +6,7 @@ from opyrator.core import name_to_title
 
 st.set_page_config(page_title="Opyrator Playground", page_icon=":arrow_forward:")
 
-st.title("Opyrator Examples")
+st.title("Opyrator Playground")
 
 CUSTOM_STREAMLIT_CSS = """
 div[data-testid="stBlock"] button {
@@ -27,7 +27,7 @@ BADGES = """
 st.markdown(BADGES, unsafe_allow_html=True)
 
 st.markdown(
-    "Opyrator enables you to instantly turn a simple Python function into a powerful web service that includes a HTTP API and a graphical UI."
+    "Opyrator enables you to instantly turn a simple Python function into a microservice that includes a HTTP API and a graphical UI."
     + " You can explore some examples below. "
 )
 
@@ -107,12 +107,16 @@ with st.beta_expander("Export this Opyrator"):
 
 if open_ui:
     open_link(f"../{selected_demo}_ui")
+    open_ui = False
 
 if open_api:
     open_link(f"../{selected_demo}_api")
+    open_api = False
 
 if open_docker_export_feature:
     open_link("https://github.com/ml-tooling/opyrator/issues/4")
+    open_docker_export_feature = False
 
 if open_zip_export_feature:
     open_link("https://github.com/ml-tooling/opyrator/issues/3")
+    open_zip_export_feature = False
