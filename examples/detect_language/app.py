@@ -28,7 +28,8 @@ class TextClassificationInput(BaseModel):
 def detect_language(input: TextClassificationInput) -> outputs.ClassificationOutput:
     """Detect the language of a given text via a Fasttext model."""
 
-    predictions = model.predict([input.inputs], k=5)
+    # New lines need to be removed -> otherwise there is an error
+    predictions = model.predict([input.inputs.replace("\n", " ")], k=5)
 
     scored_labels = [
         {"label": scored_label[0].replace("__label__", ""), "score": scored_label[1]}
