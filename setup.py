@@ -11,7 +11,7 @@ from setuptools import find_packages, setup  # type: ignore
 NAME = "opyrator"
 MAIN_PACKAGE = "opyrator"
 DESCRIPTION = "Python functions with superpowers. Instantly deploy your functions with REST API, UI, and more."
-URL = "https://github.com/mltooling/opyrator"
+URL = "https://github.com/ml-tooling/opyrator"
 EMAIL = "team@mltooling.org"
 AUTHOR = "ML Tooling Team"
 LICENSE = "MIT"
