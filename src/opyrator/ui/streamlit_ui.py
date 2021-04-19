@@ -44,7 +44,7 @@ def launch_ui(opyrator_path: str, port: int = 8501) -> None:
         import subprocess
 
         subprocess.run(
-            f'PYTHONPATH="$PYTHONPATH:{getcwd()}" {sys.executable} -m streamlit run --server.port={port} --server.headless=True --runner.magicEnabled=False --server.maxUploadSize=50 {f.name}',
+            f'PYTHONPATH="$PYTHONPATH:{getcwd()}" {sys.executable} -m streamlit run --server.port={port} --server.headless=True --runner.magicEnabled=False --server.maxUploadSize=50 --browser.gatherUsageStats=False {f.name}',
             shell=True,
         )
 
