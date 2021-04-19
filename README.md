@@ -55,17 +55,14 @@ pip install opyrator
 
     ```python
     from pydantic import BaseModel
-    import time
 
     class Input(BaseModel):
         text: str
-        wait: int
 
     class Output(BaseModel):
         text: str
 
     def hello_world(input: Input) -> Output:
-        time.sleep(input.wait)
         return Output(text=input.text)
     ```
     _Requirements: The function needs to be annotated with typing hints, and the `input` parameter and return value needs to be based on [Pydantic models](https://pydantic-docs.helpmanual.io/)._
