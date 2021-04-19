@@ -206,12 +206,6 @@ COPY ./resources/opyrator.tar.gz $RESOURCES_PATH/opyrator.tar.gz
 # hadolint ignore=DL3013
 RUN pip install $RESOURCES_PATH/opyrator.tar.gz
 
-# Copy files into workspace
-COPY \
-    resources/scripts/docker-entrypoint.py \
-    resources/5xx.html \
-    $RESOURCES_PATH/
-
 # Copy playground app to demos folder
 COPY resources/playground_app.py  $RESOURCES_PATH/demos/
 # Copy demos to demos folder
@@ -224,11 +218,18 @@ RUN \
     # Cleanup
     clean-layer.sh
 
-COPY ./resources/scripts/install-demos.py $RESOURCES_PATH/install-demos.py
-RUN \
-    python $RESOURCES_PATH/install-demos.py && \
-    # Cleanup
-    clean-layer.sh
+COPY ./resources/scripts/install-demos.py $RESOURCES_PATH/scripts/install-demos.py
+RUN python $RESOURCES_PATH/scripts/install-demos.py
+    # TODO: No cleanup should be performed here, otherwise the huggingface models are missing
+    # clean-layer.sh
+
+# Copy files into workspace
+COPY \
+    resources/scripts/docker-entrypoint.py \
+    resources/5xx.html \
+    $RESOURCES_PATH/
+
+COPY resources/scripts/activate-analytics.py $RESOURCES_PATH/scripts/
 
 # Configure nginx
 COPY resources/nginx/nginx.conf /etc/nginx/nginx.conf

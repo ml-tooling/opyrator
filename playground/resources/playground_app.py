@@ -4,9 +4,9 @@ import streamlit as st
 
 from opyrator.core import name_to_title
 
-st.title("Opyrator Examples")
+st.set_page_config(page_title="Opyrator Playground", page_icon=":arrow_forward:")
 
-DEFAULT_DEMO = "hello_world"
+st.title("Opyrator Examples")
 
 CUSTOM_STREAMLIT_CSS = """
 div[data-testid="stBlock"] button {
@@ -25,6 +25,13 @@ BADGES = """
 <a href="ttps://mltooling.substack.com/subscribe" title="Subscribe to newsletter"><img src="http://bit.ly/2Md9rxM"></a>
 """
 st.markdown(BADGES, unsafe_allow_html=True)
+
+st.markdown(
+    "Opyrator enables you to instantly turn a simple Python function into a powerful web service that includes a HTTP API and a graphical UI."
+    + " You can explore some examples below. "
+)
+
+DEFAULT_DEMO = "hello_world"
 
 demos = [str(dir) for dir in filter(os.path.isdir, os.listdir(os.curdir))]
 
@@ -81,7 +88,7 @@ with st.beta_expander("Requirements"):
 with st.beta_expander("Export this Opyrator"):
     col1, col2 = st.beta_columns([1, 2])
     with col1:
-        st.button("📦 Export to ZIP")
+        open_zip_export_feature = st.button("📦 Export to ZIP")
 
     with col2:
         st.code(
@@ -90,7 +97,7 @@ with st.beta_expander("Export this Opyrator"):
 
     col1, col2 = st.beta_columns([1, 2])
     with col1:
-        st.button("🐳 Export to Docker")
+        open_docker_export_feature = st.button("🐳 Export to Docker")
 
     with col2:
         st.code(
@@ -103,3 +110,9 @@ if open_ui:
 
 if open_api:
     open_link(f"../{selected_demo}_api")
+
+if open_docker_export_feature:
+    open_link("https://github.com/ml-tooling/opyrator/issues/4")
+
+if open_zip_export_feature:
+    open_link("https://github.com/ml-tooling/opyrator/issues/3")
