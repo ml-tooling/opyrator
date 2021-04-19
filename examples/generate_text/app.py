@@ -16,7 +16,6 @@ class TextGenerationInput(BaseModel):
     temperature: float = Field(
         1.0,
         gt=0.0,
-        # le=100.0,
         multiple_of=0.001,
         description="The value used to module the next token probabilities.",
     )
