@@ -61,10 +61,21 @@ def export(
     opyrator: str, export_name: str, format: ExportFormat = ExportFormat.ZIP
 ) -> None:
     """Package and export an opyrator."""
-    typer.secho(
-        "[WIP] This feature is not finalized yet. You can track the progress and vote for the feature here: https://github.com/ml-tooling/opyrator/issues",
-        fg=typer.colors.BRIGHT_YELLOW,
-    )
+    if format == ExportFormat.ZIP:
+        typer.secho(
+            "[WIP] This feature is not finalized yet. You can track the progress and vote for the feature here: https://github.com/ml-tooling/opyrator/issues/3",
+            fg=typer.colors.BRIGHT_YELLOW,
+        )
+    elif format == ExportFormat.DOCKER:
+        typer.secho(
+            "[WIP] This feature is not finalized yet. You can track the progress and vote for the feature here: https://github.com/ml-tooling/opyrator/issues/4",
+            fg=typer.colors.BRIGHT_YELLOW,
+        )
+    elif format == ExportFormat.PEX:
+        typer.secho(
+            "[WIP] This feature is not finalized yet. You can track the progress and vote for the feature here: https://github.com/ml-tooling/opyrator/issues/5",
+            fg=typer.colors.BRIGHT_YELLOW,
+        )
 
 
 @cli.command()
@@ -74,6 +85,6 @@ def deploy(opyrator: str) -> None:
     This provides additional features such as SSL, authentication, API tokens, unlimited scalability, load balancing, and monitoring.
     """
     typer.secho(
-        "[WIP] This feature is not finalized yet. You can track the progress and vote for the feature here: https://github.com/ml-tooling/opyrator/issues",
+        "[WIP] This feature is not finalized yet. You can track the progress and vote for the feature here: https://github.com/ml-tooling/opyrator/issues/6",
         fg=typer.colors.BRIGHT_YELLOW,
     )
