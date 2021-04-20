@@ -323,6 +323,11 @@ _TODO: Add `help` output of CLI_
 
 ### Audio Seperation
 
+<img style="width: 100%" src="./docs/images/audio-seperation-demo.png"/>
+
+- 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/seperate_audio/app.py)
+- 🔗&nbsp; [Live Demo](#TODO)
+
 ### Word Vectors Training
 
 <img style="width: 100%" src="./docs/images/train-word-vectors-demo.png"/>
