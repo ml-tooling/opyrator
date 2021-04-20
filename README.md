@@ -4,7 +4,7 @@
 </h1>
 
 <p align="center">
-    <strong>Python functions with superpowers. Instantly deploy with REST API, UI, and more.</strong>
+    <strong>Turn your Python functions into production-ready microservices with HTTP API, UI, and more.</strong>
 </p>
 
 <p align="center">
@@ -98,7 +98,7 @@ pip install opyrator
 The following collection of examples demonstrate how Opyrator can support a variety of different tasks and use-cases. All these examples are bundled into a demo playground which you can also deploy on your own machine via Docker:
 
 ```bash
-docker run -p 8080:8080 mltooling/opyrator-playground:0.0.4
+docker run -p 8080:8080 mltooling/opyrator-playground:latest
 ```
 
 ### Text Generation
