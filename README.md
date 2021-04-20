@@ -18,7 +18,8 @@
 
 <p align="center">
   <a href="#getting-started">Getting Started</a> •
-  <a href="#features">Features & Screenshots</a> •
+  <a href="#features">Features</a> •
+  <a href="#features">Examples</a> •
   <a href="#support--feedback">Support</a> •
   <a href="https://github.com/ml-tooling/opyrator/issues/new?labels=bug&template=01_bug-report.md">Report a Bug</a> •
   <a href="#contribution">Contribution</a> •
@@ -91,6 +92,86 @@ pip install opyrator
     <img style="width: 100%" src="./docs/images/opyrator-hello-world-api.png"/>
 
 5. Find out more usage details and features in the [Features](#features) section.
+
+## Examples
+
+The following collection of examples demonstrates how Opyrator can support a variety of different tasks and use-cases. All these examples are bundled into a demo playground which you can also deploy on your own machine via Docker:
+
+```bash
+docker run -p 8080:8080 opyrator-playground:0.0.4
+```
+
+### Text Generation
+
+<img style="width: 100%" src="./docs/images/text-generation-demo.png"/>
+
+- 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/generate_text/app.py)
+- 🌅&nbsp; [UI Demo](#TODO)
+- 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=)
+
+### Question Answering
+
+<img style="width: 100%" src="./docs/images/question-answering-demo.png"/>
+
+- 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/question_answering/app.py)
+- 🌅&nbsp; [UI Demo](#TODO)
+- 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=)
+
+### Image Super Resolution
+
+<img style="width: 100%" src="./docs/images/image-super-resolution-demo.png"/>
+
+- 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/image_super_resolution/app.py)
+- 🌅&nbsp; [UI Demo](#TODO)
+- 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=)
+
+### Text Preprocessing
+
+<img style="width: 100%" src="./docs/images/text-preprocessing-demo.png"/>
+
+- 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/preprocess_text/app.py)
+- 🌅&nbsp; [UI Demo](#TODO)
+- 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=)
+
+### Language Detection
+
+<img style="width: 100%" src="./docs/images/language-detection-demo.png"/>
+
+- 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/detect_language/app.py)
+- 🌅&nbsp; [UI Demo](#TODO)
+- 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=)
+
+### Audio Seperation
+
+<img style="width: 100%" src="./docs/images/audio-seperation-demo.png"/>
+
+- 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/seperate_audio/app.py)
+- 🌅&nbsp; [UI Demo](#TODO)
+- 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=)
+
+### Word Vectors Training
+
+<img style="width: 100%" src="./docs/images/train-word-vectors-demo.png"/>
+
+- 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/train_word_vectors/app.py)
+- 🌅&nbsp; [UI Demo](#TODO)
+- 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=)
+
+### Named Entity Recognition
+
+<img style="width: 100%" src="./docs/images/named-entity-recognition-demo.png"/>
+
+- 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/named_entity_recognition/app.py)
+- 🌅&nbsp; [UI Demo](#TODO)
+- 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=)
+
+### Components Showcase
+
+<img style="width: 100%" src="./docs/images/components-showcase-demo.png"/>
+
+- 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/showcase_components/app.py)
+- 🌅&nbsp; [UI Demo](#TODO)
+- 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=)
 
 ## Support & Feedback
 
@@ -308,80 +389,6 @@ _TODO: Add mapping table between JSON Schema and UI elements._
 
 _TODO: Add `help` output of CLI_
 
-## Examples
-
-### Text Generation
-
-<img style="width: 100%" src="./docs/images/text-generation-demo.png"/>
-
-- 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/generate_text/app.py)
-- 🌅&nbsp; [UI Demo](#TODO)
-- 🔌&nbsp; [OpenAPI Spec](#TODO)
-
-### Question Answering
-
-<img style="width: 100%" src="./docs/images/question-answering-demo.png"/>
-
-- 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/question_answering/app.py)
-- 🌅&nbsp; [UI Demo](#TODO)
-- 🔌&nbsp; [OpenAPI Spec](#TODO)
-
-### Image Super Resolution
-
-<img style="width: 100%" src="./docs/images/image-super-resolution-demo.png"/>
-
-- 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/image_super_resolution/app.py)
-- 🌅&nbsp; [UI Demo](#TODO)
-- 🔌&nbsp; [OpenAPI Spec](#TODO)
-
-### Text Preprocessing
-
-<img style="width: 100%" src="./docs/images/text-preprocessing-demo.png"/>
-
-- 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/preprocess_text/app.py)
-- 🌅&nbsp; [UI Demo](#TODO)
-- 🔌&nbsp; [OpenAPI Spec](#TODO)
-
-### Language Detection
-
-<img style="width: 100%" src="./docs/images/language-detection-demo.png"/>
-
-- 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/detect_language/app.py)
-- 🌅&nbsp; [UI Demo](#TODO)
-- 🔌&nbsp; [OpenAPI Spec](#TODO)
-
-### Audio Seperation
-
-<img style="width: 100%" src="./docs/images/audio-seperation-demo.png"/>
-
-- 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/seperate_audio/app.py)
-- 🌅&nbsp; [UI Demo](#TODO)
-- 🔌&nbsp; [OpenAPI Spec](#TODO)
-
-### Word Vectors Training
-
-<img style="width: 100%" src="./docs/images/train-word-vectors-demo.png"/>
-
-- 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/train_word_vectors/app.py)
-- 🌅&nbsp; [UI Demo](#TODO)
-- 🔌&nbsp; [OpenAPI Spec](#TODO)
-
-### Named Entity Recognition
-
-<img style="width: 100%" src="./docs/images/named-entity-recognition-demo.png"/>
-
-- 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/named_entity_recognition/app.py)
-- 🔗&nbsp; [UI Demo](#TODO)
-- 🌅&nbsp; [UI Demo](#TODO)
-- 🔌&nbsp; [OpenAPI Spec](#TODO)
-
-### Components Showcase
-
-<img style="width: 100%" src="./docs/images/components-showcase-demo.png"/>
-
-- 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/showcase_components/app.py)
-- 🌅&nbsp; [UI Demo](#TODO)
-- 🔌&nbsp; [OpenAPI Spec](#TODO)
 
 ## Contribution
 
