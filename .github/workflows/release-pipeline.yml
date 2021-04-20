@@ -1,4 +1,4 @@
-# Based on https://github.com/ml-tooling/universal-build/blob/v0.6.13/workflows/build-pipeline.yml
+# Based on https://github.com/ml-tooling/universal-build/blob/v0.6.14/workflows/build-pipeline.yml
 name: release-pipeline
 
 on:
