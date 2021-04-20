@@ -333,16 +333,16 @@ This project is maintained by [Benjamin Räthlein](https://twitter.com/raethlein
 ## Features
 
 <p align="center">
-  <a href="#rest-api">REST API</a> •
+  <a href="#http-api">HTTP API</a> •
   <a href="#graphical-ui">Graphical UI</a> •
   <a href="#command-line-interface">CLI</a> •
-  <a href="#zip-export">ZIP Export</a> •
+  <a href="#zip-export">Zip Export</a> •
   <a href="#docker-export">Docker Export</a> •
   <a href="#pre-defined-components">Pre-defined Components</a> •
   <a href="#production-deployment">Production Deployment</a>
 </p>
 
-### REST API
+### HTTP API
 
 With Opyrator, you can instantly launch a local HTTP (REST) API server for any [compatible function](#compatible-functions):
 
@@ -426,7 +426,7 @@ opyrator call http://my-opyrator:8080 '{"message": "hello"}'
 
 Thereby, the function call is executed by the Opyrator API server, instead of locally using the Python function.
 
-### ZIP Export
+### Zip Export
 
 Opyrator allows you to package and export a [compatible function](#compatible-functions) into a self-contained zip-file:
 
@@ -436,7 +436,7 @@ opyrator export my_opyrator:hello_world my-opyrator.zip
 
 This exported zip-file packages relevant source code and data artifacts into a single file which can be shared, stored, and used for launching the API or UI as shown above.
 
-External requirements are automatically discovered from the working directory based on the following files: `Pipfile` (Pipenv environment), `environment.yml` (Conda environment), `pyproject.toml` (Poetry dependencies), `requirements.txt` (PIP requirements), `setup.py` (Python project requirements), `packages.txt` (apt-get packages), or discovered via [pipreqs](https://github.com/bndr/pipreqs) as fallback. However, external requirements are only included as instructions and are not packaged into the ZIP file. If you want to export your Opyrator fully self-contained including all requirements or even the Python interpreter itself, please refer to the [Docker](#docker-export) or [PEX](#pex-export) export options.
+External requirements are automatically discovered from the working directory based on the following files: `Pipfile` (Pipenv environment), `environment.yml` (Conda environment), `pyproject.toml` (Poetry dependencies), `requirements.txt` (pip-requirements), `setup.py` (Python project requirements), `packages.txt` (apt-get packages), or discovered via [pipreqs](https://github.com/bndr/pipreqs) as fallback. However, external requirements are only included as instructions and are not packaged into the zip-file. If you want to export your Opyrator fully self-contained including all requirements or even the Python interpreter itself, please refer to the [Docker](#docker-export) or [pex](#pex-export) export options.
 
 As a side note, Opyrators exported as zip-files are (mini) Python libraries that can be pip-installed, imported, and used from other Python code:
 
@@ -466,9 +466,9 @@ Running your Opyrator within this Docker image has the advantage that only a sin
 
 _WIP: This feature is not finalized yet. You can track the progress and vote for the feature [here](https://github.com/ml-tooling/opyrator/issues/4)._
 
-### PEX Export
+### Pex Export
 
-Opyrator also provides the capability to export to a PEX file. [PEX](https://github.com/pantsbuild/pex) is a tool to create self-contained executable Python environments that contain all relevant python dependencies.
+Opyrator also provides the capability to export to a pex-file. [Pex](https://github.com/pantsbuild/pex) is a tool to create self-contained executable Python environments that contain all relevant python dependencies.
 
 ```bash
 opyrator export my_opyrator:hello_world --format=pex my-opyrator.pex
@@ -524,15 +524,11 @@ A function is compatible with Opyrator if it fulfills the following requirements
 
 ### Input- and Output-Schema
 
-_TODO_
-
-These input- and output-models are used to generate the REST API and Web UI.
-
-_TODO: Add mapping table between JSON Schema and UI elements._
+_WIP_
 
 ### Command-line Interface
 
-_TODO: Add `help` output of CLI_
+_WIP_
 
 
 ## Contribution
