@@ -322,6 +322,11 @@ _TODO: Add `help` output of CLI_
 
 ### Text Generation
 
+<img style="width: 100%" src="./docs/images/text-generation-demo.png"/>
+
+- 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/generate_text/app.py)
+- 🔗&nbsp; [Live Demo](#TODO)
+
 ### Image Super Resolution
 
 <img style="width: 100%" src="./docs/images/image-super-resolution-demo.png"/>
