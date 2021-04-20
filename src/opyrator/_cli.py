@@ -12,7 +12,7 @@ cli = typer.Typer()
 
 
 @cli.command()
-def launch_ui(opyrator: str, port: int = 8501) -> None:
+def launch_ui(opyrator: str, port: int = typer.Option(8051, "--port", "-p")) -> None:
     """Start a graphical UI server for the opyrator.
 
     The UI is auto-generated from the input- and output-schema of the given function.
@@ -23,7 +23,11 @@ def launch_ui(opyrator: str, port: int = 8501) -> None:
 
 
 @cli.command()
-def launch_api(opyrator: str, port: int = 8080, host: str = "0.0.0.0") -> None:
+def launch_api(
+    opyrator: str,
+    port: int = typer.Option(8080, "--port", "-p"),
+    host: str = typer.Option("0.0.0.0", "--host", "-h"),
+) -> None:
     """Start a HTTP API server for the opyrator.
 
     This will launch a FastAPI server based on the OpenAPI standard and with an automatic interactive documentation.
