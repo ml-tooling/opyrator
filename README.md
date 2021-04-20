@@ -91,7 +91,7 @@ pip install opyrator
 
     <img style="width: 100%" src="./docs/images/opyrator-hello-world-api.png"/>
 
-5. Find out more usage details and features in the [Features](#features) section.
+5. Find out more usage usage information in the [Features](#features) section or get inspired by our [examples](#examples).
 
 ## Examples
 
