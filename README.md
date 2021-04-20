@@ -312,7 +312,17 @@ _TODO: Add `help` output of CLI_
 
 ### Question Answering
 
+<img style="width: 100%" src="./docs/images/question-answering-demo.png"/>
+
+- 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/question_answering/app.py)
+- 🔗&nbsp; [Live Demo](#TODO)
+
 ### Text Preprocessing
+
+<img style="width: 100%" src="./docs/images/text-preprocessing-demo.png"/>
+
+- 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/preprocess_text/app.py)
+- 🔗&nbsp; [Live Demo](#TODO)
 
 ### Language Detection
 
