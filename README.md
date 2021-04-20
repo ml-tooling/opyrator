@@ -67,6 +67,7 @@ pip install opyrator
     def hello_world(input: Input) -> Output:
         return Output(text=input.text)
     ```
+
     _Requirements: The function needs to be annotated with typing hints, and the `input` parameter and return value needs to be based on [Pydantic models](https://pydantic-docs.helpmanual.io/)._
 
 2. Copy this code to a file `my_opyrator.py`
@@ -75,6 +76,7 @@ pip install opyrator
     ```bash
     opyrator launch-ui my_opyrator:hello_world
     ```
+
     _In the output, there's a line that shows where your web app is being served, on your local machine._
 
     <img style="width: 100%" src="./docs/images/opyrator-hello-world-ui.png"/>
@@ -307,6 +309,29 @@ _TODO: Add mapping table between JSON Schema and UI elements._
 _TODO: Add `help` output of CLI_
 
 ## Examples
+
+### Question Answering
+
+### Text Preprocessing
+
+### Language Detection
+
+### Audio Seperation
+
+### Word Vectors Training
+
+### Text Generation
+
+### Image Super Resolution
+
+<img style="width: 100%" src="./docs/images/image-super-resolution-demo.png"/>
+
+- 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/image_super_resolution/app.py)
+- 🔗&nbsp; [Live Demo](#TODO)
+
+### Named Entity Recognition
+
+### Components Showcase
 
 _TODO: Add examples_
 
