@@ -316,6 +316,11 @@ _TODO: Add `help` output of CLI_
 
 ### Language Detection
 
+<img style="width: 100%" src="./docs/images/language-detection-demo.png"/>
+
+- 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/detect_language/app.py)
+- 🔗&nbsp; [Live Demo](#TODO)
+
 ### Audio Seperation
 
 ### Word Vectors Training
