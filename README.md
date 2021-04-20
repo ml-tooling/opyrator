@@ -310,11 +310,25 @@ _TODO: Add `help` output of CLI_
 
 ## Examples
 
+### Text Generation
+
+<img style="width: 100%" src="./docs/images/text-generation-demo.png"/>
+
+- 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/generate_text/app.py)
+- 🔗&nbsp; [Live Demo](#TODO)
+
 ### Question Answering
 
 <img style="width: 100%" src="./docs/images/question-answering-demo.png"/>
 
 - 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/question_answering/app.py)
+- 🔗&nbsp; [Live Demo](#TODO)
+
+### Image Super Resolution
+
+<img style="width: 100%" src="./docs/images/image-super-resolution-demo.png"/>
+
+- 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/image_super_resolution/app.py)
 - 🔗&nbsp; [Live Demo](#TODO)
 
 ### Text Preprocessing
@@ -345,20 +359,6 @@ _TODO: Add `help` output of CLI_
 - 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/train_word_vectors/app.py)
 - 🔗&nbsp; [Live Demo](#TODO)
 
-### Text Generation
-
-<img style="width: 100%" src="./docs/images/text-generation-demo.png"/>
-
-- 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/generate_text/app.py)
-- 🔗&nbsp; [Live Demo](#TODO)
-
-### Image Super Resolution
-
-<img style="width: 100%" src="./docs/images/image-super-resolution-demo.png"/>
-
-- 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/image_super_resolution/app.py)
-- 🔗&nbsp; [Live Demo](#TODO)
-
 ### Named Entity Recognition
 
 <img style="width: 100%" src="./docs/images/named-entity-recognition-demo.png"/>
@@ -368,7 +368,10 @@ _TODO: Add `help` output of CLI_
 
 ### Components Showcase
 
-_TODO: Add examples_
+<img style="width: 100%" src="./docs/images/components-showcase-demo.png"/>
+
+- 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/showcase_components/app.py)
+- 🔗&nbsp; [Live Demo](#TODO)
 
 ## Contribution
 
