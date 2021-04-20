@@ -82,7 +82,7 @@ pip install opyrator
 
     <img style="width: 100%" src="./docs/images/opyrator-hello-world-ui.png"/>
 
-4. Run the REST API server from command-line:
+4. Run the HTTP API server from command-line:
 
     ```bash
     opyrator launch-api my_opyrator:hello_world
@@ -207,7 +207,7 @@ opyrator launch-api my_opyrator:hello_world
 
 This will launch a [FastAPI](https://fastapi.tiangolo.com/) server based on the [OpenAPI standard](https://swagger.io/specification) and with an automatic interactive documentation.
 
-_TODO: Add Screenshot_
+<img style="width: 100%" src="./docs/images/opyrator-hello-world-api.png"/>
 
 _💡 Make sure that all requirements of your script are installed in the active Python enviornment._
 
@@ -231,7 +231,7 @@ You can launch a graphical user interface - powered by  [Streamlit](https://stre
 opyrator launch-ui my_opyrator:hello_world
 ```
 
-_TODO: Screenshot_
+<img style="width: 100%" src="./docs/images/opyrator-hello-world-ui.png"/>
 
 _💡 Make sure that all requirements of your script are installed in the active Python environment._
 
