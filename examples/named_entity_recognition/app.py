@@ -37,7 +37,10 @@ class NamedEntitiesOutput(BaseModel):
     __root__: List[NamedEntity]
 
     def render_output_ui(self, streamlit, input) -> None:  # type: ignore
-        """Custom output UI. If this method is implmeneted, it will be used"""
+        """Custom output UI.
+
+        If this method is implmeneted, it will be used instead of the default Output UI renderer.
+        """
         from annotated_text import annotated_text
 
         TYPE_TO_COLOR = {
