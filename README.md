@@ -320,6 +320,11 @@ _TODO: Add `help` output of CLI_
 
 ### Word Vectors Training
 
+<img style="width: 100%" src="./docs/images/train-word-vectors-demo.png"/>
+
+- 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/train_word_vectors/app.py)
+- 🔗&nbsp; [Live Demo](#TODO)
+
 ### Text Generation
 
 <img style="width: 100%" src="./docs/images/text-generation-demo.png"/>
