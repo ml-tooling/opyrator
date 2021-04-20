@@ -26,7 +26,7 @@
   <a href="https://github.com/ml-tooling/opyrator/releases">Changelog</a>
 </p>
 
-Opyrator enables you to instantly turn a simple Python function into a powerful web service that includes a HTTP REST API and a full-blown graphical UI. It can be saved & shared as self-contained executable file and instantly deployed & scaled for production usage. Opyrator is powered by Pydantic, FastAPI, and Streamlit and enables you to build your web apps and services within seconds.
+Instantly turn your python functions into production-ready microservices. Deploy and access your services via HTTP API or interactive UI. Seamlessly export your services into portable, shareable, and executable files or Docker images. Opyrator builds on open standards - OpenAPI,  JSON Schema, and Python type hints - and is powered by FastAPI, Streamlit, and Pydantic. It cuts out all the pain for productizing and sharing your python code - or anything you can wrap into a single python function.
 
 <sup>Alpha Version: Only suggested for experimental usage.</sup>
 
