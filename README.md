@@ -346,6 +346,11 @@ _TODO: Add `help` output of CLI_
 
 ### Named Entity Recognition
 
+<img style="width: 100%" src="./docs/images/named-entity-recognition-demo.png"/>
+
+- 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/named_entity_recognition/app.py)
+- 🔗&nbsp; [Live Demo](#TODO)
+
 ### Components Showcase
 
 _TODO: Add examples_
