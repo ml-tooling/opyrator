@@ -110,7 +110,7 @@ docker run -p 8080:8080 mltooling/opyrator-playground:0.0.4
 - 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=)
 
 <details>
-<summary>Run this demo on your machine...</summary>
+<summary>Run this demo on your machine (click to expand...)</summary>
 
 To run the demo on your local machine just execute the following commands:
 
@@ -134,6 +134,22 @@ Visit http://localhost:8051 in your browser to access the UI of the demo. Use `l
 - 🌅&nbsp; [UI Demo](#TODO)
 - 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=)
 
+<details>
+<summary>Run this demo on your machine (click to expand...)</summary>
+
+To run the demo on your local machine just execute the following commands:
+
+```bash
+git clone https://github.com/ml-tooling/opyrator
+cd ./opyrator/examples/question_answering/
+pip install -r requirements.txt
+opyrator launch-ui app:question_answering --port 8051
+```
+
+Visit http://localhost:8051 in your browser to access the UI of the demo. Use `launch-api` instead of `launch-ui` to launch the HTTP API server.
+
+</details>
+
 ### Image Super Resolution
 
 <img style="width: 100%" src="./docs/images/image-super-resolution-demo.png"/>
@@ -141,6 +157,22 @@ Visit http://localhost:8051 in your browser to access the UI of the demo. Use `l
 - 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/image_super_resolution/app.py)
 - 🌅&nbsp; [UI Demo](#TODO)
 - 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=)
+
+<details>
+<summary>Run this demo on your machine (click to expand...)</summary>
+
+To run the demo on your local machine just execute the following commands:
+
+```bash
+git clone https://github.com/ml-tooling/opyrator
+cd ./opyrator/examples/image_super_resolution/
+pip install -r requirements.txt
+opyrator launch-ui app:image_super_resolution --port 8051
+```
+
+Visit http://localhost:8051 in your browser to access the UI of the demo. Use `launch-api` instead of `launch-ui` to launch the HTTP API server.
+
+</details>
 
 ### Text Preprocessing
 
@@ -150,6 +182,22 @@ Visit http://localhost:8051 in your browser to access the UI of the demo. Use `l
 - 🌅&nbsp; [UI Demo](#TODO)
 - 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=)
 
+<details>
+<summary>Run this demo on your machine (click to expand...)</summary>
+
+To run the demo on your local machine just execute the following commands:
+
+```bash
+git clone https://github.com/ml-tooling/opyrator
+cd ./opyrator/examples/preprocess_text/
+pip install -r requirements.txt
+opyrator launch-ui app:preprocess_text --port 8051
+```
+
+Visit http://localhost:8051 in your browser to access the UI of the demo. Use `launch-api` instead of `launch-ui` to launch the HTTP API server.
+
+</details>
+
 ### Language Detection
 
 <img style="width: 100%" src="./docs/images/language-detection-demo.png"/>
@@ -157,6 +205,22 @@ Visit http://localhost:8051 in your browser to access the UI of the demo. Use `l
 - 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/detect_language/app.py)
 - 🌅&nbsp; [UI Demo](#TODO)
 - 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=)
+
+<details>
+<summary>Run this demo on your machine (click to expand...)</summary>
+
+To run the demo on your local machine just execute the following commands:
+
+```bash
+git clone https://github.com/ml-tooling/opyrator
+cd ./opyrator/examples/detect_language/
+pip install -r requirements.txt
+opyrator launch-ui app:detect_language --port 8051
+```
+
+Visit http://localhost:8051 in your browser to access the UI of the demo. Use `launch-api` instead of `launch-ui` to launch the HTTP API server.
+
+</details>
 
 ### Audio Seperation
 
@@ -166,6 +230,22 @@ Visit http://localhost:8051 in your browser to access the UI of the demo. Use `l
 - 🌅&nbsp; [UI Demo](#TODO)
 - 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=)
 
+<details>
+<summary>Run this demo on your machine (click to expand...)</summary>
+
+To run the demo on your local machine just execute the following commands:
+
+```bash
+git clone https://github.com/ml-tooling/opyrator
+cd ./opyrator/examples/seperate_audio/
+pip install -r requirements.txt
+opyrator launch-ui app:seperate_audio --port 8051
+```
+
+Visit http://localhost:8051 in your browser to access the UI of the demo. Use `launch-api` instead of `launch-ui` to launch the HTTP API server.
+
+</details>
+
 ### Word Vectors Training
 
 <img style="width: 100%" src="./docs/images/train-word-vectors-demo.png"/>
@@ -173,6 +253,22 @@ Visit http://localhost:8051 in your browser to access the UI of the demo. Use `l
 - 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/train_word_vectors/app.py)
 - 🌅&nbsp; [UI Demo](#TODO)
 - 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=)
+
+<details>
+<summary>Run this demo on your machine (click to expand...)</summary>
+
+To run the demo on your local machine just execute the following commands:
+
+```bash
+git clone https://github.com/ml-tooling/opyrator
+cd ./opyrator/examples/train_word_vectors/
+pip install -r requirements.txt
+opyrator launch-ui app:train_word_vectors --port 8051
+```
+
+Visit http://localhost:8051 in your browser to access the UI of the demo. Use `launch-api` instead of `launch-ui` to launch the HTTP API server.
+
+</details>
 
 ### Named Entity Recognition
 
@@ -182,6 +278,22 @@ Visit http://localhost:8051 in your browser to access the UI of the demo. Use `l
 - 🌅&nbsp; [UI Demo](#TODO)
 - 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=)
 
+<details>
+<summary>Run this demo on your machine (click to expand...)</summary>
+
+To run the demo on your local machine just execute the following commands:
+
+```bash
+git clone https://github.com/ml-tooling/opyrator
+cd ./opyrator/examples/named_entity_recognition/
+pip install -r requirements.txt
+opyrator launch-ui app:named_entity_recognition --port 8051
+```
+
+Visit http://localhost:8051 in your browser to access the UI of the demo. Use `launch-api` instead of `launch-ui` to launch the HTTP API server.
+
+</details>
+
 ### Components Showcase
 
 <img style="width: 100%" src="./docs/images/components-showcase-demo.png"/>
@@ -189,6 +301,22 @@ Visit http://localhost:8051 in your browser to access the UI of the demo. Use `l
 - 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/showcase_components/app.py)
 - 🌅&nbsp; [UI Demo](#TODO)
 - 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=)
+
+<details>
+<summary>Run this demo on your machine (click to expand...)</summary>
+
+To run the demo on your local machine just execute the following commands:
+
+```bash
+git clone https://github.com/ml-tooling/opyrator
+cd ./opyrator/examples/showcase_components/
+pip install -r requirements.txt
+opyrator launch-ui app:showcase_components --port 8051
+```
+
+Visit http://localhost:8051 in your browser to access the UI of the demo. Use `launch-api` instead of `launch-ui` to launch the HTTP API server.
+
+</details>
 
 ## Support & Feedback
 
