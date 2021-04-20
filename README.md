@@ -19,7 +19,7 @@
 <p align="center">
   <a href="#getting-started">Getting Started</a> •
   <a href="#features">Features</a> •
-  <a href="#features">Examples</a> •
+  <a href="#examples">Examples</a> •
   <a href="#support--feedback">Support</a> •
   <a href="https://github.com/ml-tooling/opyrator/issues/new?labels=bug&template=01_bug-report.md">Report a Bug</a> •
   <a href="#contribution">Contribution</a> •
@@ -95,10 +95,10 @@ pip install opyrator
 
 ## Examples
 
-The following collection of examples demonstrates how Opyrator can support a variety of different tasks and use-cases. All these examples are bundled into a demo playground which you can also deploy on your own machine via Docker:
+The following collection of examples demonstrate how Opyrator can support a variety of different tasks and use-cases. All these examples are bundled into a demo playground which you can also deploy on your own machine via Docker:
 
 ```bash
-docker run -p 8080:8080 opyrator-playground:0.0.4
+docker run -p 8080:8080 mltooling/opyrator-playground:0.0.4
 ```
 
 ### Text Generation
