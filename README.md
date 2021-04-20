@@ -262,7 +262,7 @@ Thereby, all Opyrator calls from the UI will be executed via the configured HTTP
 An Opyrator can also be executed via command-line:
 
 ```bash
-opyrator call my_opyrator:hello_world '{"text": "hello", "wait": 1}'
+opyrator call my_opyrator:hello_world '{"message": "hello"}'
 ```
 
 <img style="width: 80%" src="./docs/images/opyrator-cli.png"/>
@@ -270,13 +270,13 @@ opyrator call my_opyrator:hello_world '{"text": "hello", "wait": 1}'
 The CLI interface also works using the [zip export format](#zip-export):
 
 ```bash
-opyrator call my-opyrator.zip '{"text": "hello", "wait": 1}'
+opyrator call my-opyrator.zip '{"message": "hello"}'
 ```
 
 Or, by using an already running Opyrator API endpoint:
 
 ```bash
-opyrator call http://my-opyrator:8080 '{"text": "hello", "wait": 1}'
+opyrator call http://my-opyrator:8080 '{"message": "hello"}'
 ```
 
 Thereby, the function call is executed by the Opyrator API server, instead of locally using the Python function.
