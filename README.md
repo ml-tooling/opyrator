@@ -109,6 +109,23 @@ docker run -p 8080:8080 mltooling/opyrator-playground:0.0.4
 - 🌅&nbsp; [UI Demo](#TODO)
 - 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=)
 
+<details>
+<summary>Run this demo on your machine...</summary>
+
+To run the demo on your local machine just execute the following commands:
+
+```bash
+git clone https://github.com/ml-tooling/opyrator
+cd ./opyrator/examples/generate_text/
+pip install -r requirements.txt
+opyrator launch-ui app:generate_text --port 8051
+```
+
+Visit http://localhost:8051 in your browser to access the UI of the demo. Use `launch-api` instead of `launch-ui` to launch the HTTP API server.
+
+</details>
+
+
 ### Question Answering
 
 <img style="width: 100%" src="./docs/images/question-answering-demo.png"/>
