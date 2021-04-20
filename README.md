@@ -29,6 +29,7 @@ Opyrator enables you to instantly turn a simple Python function into a powerful 
 
 _Alpha Version: This is still under heavy development and only suggested for experimental usage._
 
+<img style="width: 100%" src="./docs/images/opyrator-header.png"/>
 
 ## Highlights
 
@@ -36,7 +37,7 @@ _Alpha Version: This is still under heavy development and only suggested for exp
 - 🔌&nbsp; Auto-generated HTTP API based on FastAPI.
 - 🌅&nbsp; Auto-generated Web UI based on Streamlit.
 - 📦&nbsp; Save and share as self-contained executable file or Docker image.
-- 🧩&nbsp; Reuse pre-defined interfaces & combine with existing Opyrators.
+- 🧩&nbsp; Reuse pre-defined components & combine with existing Opyrators.
 - 📈&nbsp; Instantly deploy and scale for production usage.
 
 ## Getting Started
@@ -107,7 +108,7 @@ This project is maintained by [Benjamin Räthlein](https://twitter.com/raethlein
   <a href="#command-line-interface">CLI</a> •
   <a href="#zip-export">ZIP Export</a> •
   <a href="#docker-export">Docker Export</a> •
-  <a href="#pre-defined-interfaces">Pre-defined Interfaces</a> •
+  <a href="#pre-defined-components">Pre-defined Components</a> •
   <a href="#production-deployment">Production Deployment</a>
 </p>
 
@@ -261,15 +262,15 @@ opyrator_client = Client("http://my-opyrator:8080")
 result = opyrator_client.call(Input(text="hello", wait=1))
 ```
 
-_WIP: This feature is not finalized yet. You can track the progress and vote for the feature [here](#TODO)._
+_WIP: This feature is not finalized yet. You can track the progress and vote for the feature [here](https://github.com/ml-tooling/opyrator/issues/8)._
 
-### Pre-defined Interfaces
+### Pre-defined Components
 
-Opyrator provides a growing collection of pre-defined interfaces (input- and output schemas) for common tasks. Some of these interfaces also provide more advanced UIs and Visualizations. You can reuse these schemas to speed up your development and, thereby, also keep your Opyrators compatible to other functionality improvements or other Opyrators.
+Opyrator provides a growing collection of pre-defined components (input- and output models) for common tasks. Some of these components also provide more advanced UIs and Visualizations. You can reuse these components to speed up your development and, thereby, keep your Opyrators compatible with other functionality improvements or other Opyrators.
 
 You can find some of the available interfaces in the [examples](#examples) section or in this [source code package](#TODO).
 
-_WIP: This feature is not finalized yet. You can track the progress and vote for the feature [here](#TODO)._
+_WIP: This feature is not finalized yet. You can track the progress and vote for the feature [here](https://github.com/ml-tooling/opyrator/issues/9)._
 
 ### Production Deployment
 
@@ -285,10 +286,10 @@ _WIP: This feature is not finalized yet. You can track the progress and vote for
 
 ### Compatible Functions
 
-A function is compatible with Opyrator if it fullfills the following requirements:
+A function is compatible with Opyrator if it fulfills the following requirements:
 
 - A single parameter called `input` which MUST be a subclass of the [Pydantic BaseModel](https://pydantic-docs.helpmanual.io/usage/models/).
-- A single return value which MUST be a subclass of the [Pydantic BaseModel](https://pydantic-docs.helpmanual.io/usage/models/).
+- A single return value that MUST be a subclass of the [Pydantic BaseModel](https://pydantic-docs.helpmanual.io/usage/models/).
 - The `input` parameter and return value MUST be annotated with Python typing hints.
 
 ### Input- and Output-Schema
