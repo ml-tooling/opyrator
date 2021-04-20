@@ -27,9 +27,10 @@
 
 Opyrator enables you to instantly turn a simple Python function into a powerful web service that includes a HTTP REST API and a full-blown graphical UI. It can be saved & shared as self-contained executable file and instantly deployed & scaled for production usage. Opyrator is powered by Pydantic, FastAPI, and Streamlit and enables you to build your web apps and services within seconds.
 
-_Alpha Version: This is still under heavy development and only suggested for experimental usage._
+<sup>Alpha Version: Only suggested for experimental usage.</sup>
 
 <img style="width: 100%" src="./docs/images/opyrator-header.png"/>
+
 
 ## Highlights
 
@@ -76,7 +77,7 @@ pip install opyrator
     ```
     _In the output, there's a line that shows where your web app is being served, on your local machine._
 
-    TODO: Add screenshot
+    <img style="width: 100%" src="./docs/images/opyrator-hello-world-ui.png"/>
 
 4. Run the REST API server from command-line:
 
@@ -85,7 +86,8 @@ pip install opyrator
     ```
     _In the output, there's a line that shows where your web service is being served, on your local machine._
 
-    TODO: Add screenshot
+    <img style="width: 100%" src="./docs/images/opyrator-hello-world-api.png"/>
+
 5. Find out more usage details and features in the [Features](#features) section.
 
 ## Support & Feedback
