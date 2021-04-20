@@ -265,7 +265,7 @@ An Opyrator can also be executed via command-line:
 opyrator call my_opyrator:hello_world '{"text": "hello", "wait": 1}'
 ```
 
-<img style="width: 100%" src="./docs/images/opyrator-cli.png"/>
+<img style="width: 80%" src="./docs/images/opyrator-cli.png"/>
 
 The CLI interface also works using the [zip export format](#zip-export):
 
