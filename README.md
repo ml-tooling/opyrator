@@ -60,13 +60,14 @@ pip install opyrator
     from pydantic import BaseModel
 
     class Input(BaseModel):
-        text: str
+        message: str
 
     class Output(BaseModel):
-        text: str
+        message: str
 
     def hello_world(input: Input) -> Output:
-        return Output(text=input.text)
+        """Returns the `message` of the input data."""
+        return Output(message=input.message)
     ```
 
     _Requirements: The function needs to be annotated with typing hints, and the `input` parameter and return value needs to be based on [Pydantic models](https://pydantic-docs.helpmanual.io/)._
