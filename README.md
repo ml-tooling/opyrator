@@ -26,11 +26,19 @@
   <a href="https://github.com/ml-tooling/opyrator/releases">Changelog</a>
 </p>
 
-Instantly turn your python functions into production-ready microservices. Deploy and access your services via HTTP API or interactive UI. Seamlessly export your services into portable, shareable, and executable files or Docker images. Opyrator builds on open standards - OpenAPI,  JSON Schema, and Python type hints - and is powered by FastAPI, Streamlit, and Pydantic. It cuts out all the pain for productizing and sharing your python code - or anything you can wrap into a single python function.
+Instantly turn your Python functions into production-ready microservices. Deploy and access your services via HTTP API or interactive UI. Seamlessly export your services into portable, shareable, and executable files or Docker images. Opyrator builds on open standards - OpenAPI,  JSON Schema, and Python type hints - and is powered by FastAPI, Streamlit, and Pydantic. It cuts out all the pain for productizing and sharing your Python code - or anything you can wrap into a single Python function.
 
 <sup>Alpha Version: Only suggested for experimental usage.</sup>
 
 <img style="width: 100%" src="./docs/images/opyrator-header.png"/>
+
+---
+
+<p align="center">
+     Try out and explore various examples in our playground <a href="https://opyrator-playground.mltooling.org">here</a>.
+</p>
+
+---
 
 
 ## Highlights
@@ -95,6 +103,14 @@ pip install opyrator
 5. Find out more usage usage information in the [Features](#features) section or get inspired by our [examples](#examples).
 
 ## Examples
+
+---
+
+<p align="center">
+     👉&nbsp; Try out and explore these examples in our playground <a href="https://opyrator-playground.mltooling.org">here</a>
+</p>
+
+---
 
 The following collection of examples demonstrate how Opyrator can support a variety of different tasks and use-cases. All these examples are bundled into a demo playground which you can also deploy on your own machine via Docker:
 
