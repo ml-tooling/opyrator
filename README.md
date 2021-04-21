@@ -40,7 +40,6 @@ Instantly turn your Python functions into production-ready microservices. Deploy
 
 ---
 
-
 ## Highlights
 
 - 🪄&nbsp; Turn functions into production-ready services within seconds.
