@@ -27,8 +27,8 @@ BADGES = """
 st.markdown(BADGES, unsafe_allow_html=True)
 
 st.markdown(
-    "Opyrator enables you to instantly turn a simple Python function into a microservice that includes a HTTP API and a graphical UI."
-    + " You can explore some examples below. "
+    "Opyrator enables you to instantly to turn your python functions into microservices with auto-generated HTTP API, interactive UI, and more."
+    + " You can explore some examples below 👇"
 )
 
 DEFAULT_DEMO = "hello_world"
@@ -54,7 +54,7 @@ selected_demo = title_to_demo[selected_demo_title]
 
 
 def open_link(url: str, new_tab: bool = True) -> None:
-    """Dirty hack to open a new web page with a streamlit button."""
+    """Hack to open a new web page with a streamlit button."""
     from bokeh.models.widgets import Div
 
     # From: https://discuss.streamlit.io/t/how-to-link-a-button-to-a-webpage/1661/3
@@ -77,7 +77,7 @@ with col2:
 
 col1, col2 = st.beta_columns([1, 2])
 
-with st.beta_expander("Code", expanded=True):
+with st.beta_expander("Source Code", expanded=True):
     with open(os.path.join(selected_demo, "app.py"), encoding="UTF-8") as f:
         st.code(f.read(), language="python")
 
@@ -86,6 +86,9 @@ with st.beta_expander("Requirements"):
         st.code(f.read(), language="plain")
 
 with st.beta_expander("Export this Opyrator"):
+    st.markdown(
+        "Opyrator provides capabilities to seamlessly export your services into portable, shareable, and executable files or Docker images."
+    )
     col1, col2 = st.beta_columns([1, 2])
     with col1:
         open_zip_export_feature = st.button("📦 Export to ZIP")
@@ -106,11 +109,11 @@ with st.beta_expander("Export this Opyrator"):
         )
 
 if open_ui:
-    open_link(f"../{selected_demo}_ui")
+    open_link(f"../{selected_demo}_ui/")
     open_ui = False
 
 if open_api:
-    open_link(f"../{selected_demo}_api")
+    open_link(f"../{selected_demo}_api/")
     open_api = False
 
 if open_docker_export_feature:
