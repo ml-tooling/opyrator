@@ -555,15 +555,7 @@ _WIP_
 
 ## Development
 
-> _**Requirements**: [Docker](https://docs.docker.com/get-docker/) and [Act](https://github.com/nektos/act#installation) are required to be installed on your machine to execute the containerized build process._
-
-To simplify the process of building this project from scratch, we provide build-scripts - based on [universal-build](https://github.com/ml-tooling/universal-build) - that run all necessary steps (build, check, test, and release) within a containerized environment. To build and test your changes, execute the following command in the project root folder:
-
-```bash
-act -b -j build
-```
-
-Refer to our [contribution guides](https://github.com/ml-tooling/opyrator/blob/main/CONTRIBUTING.md#development-instructions) for more detailed information on our build scripts and development process.
+Refer to our [contribution guides](https://github.com/ml-tooling/opyrator/blob/main/CONTRIBUTING.md#development-instructions) for information on our build scripts and development process.
 
 ---
 
