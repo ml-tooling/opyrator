@@ -4,7 +4,7 @@
 </h1>
 
 <p align="center">
-    <strong>Turn your Python functions into production-ready microservices with HTTP API, UI, and more.</strong>
+    <strong>Turns your Python functions into microservices with web API, interactive GUI, and more.</strong>
 </p>
 
 <p align="center">
