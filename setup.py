@@ -10,7 +10,7 @@ from setuptools import find_packages, setup  # type: ignore
 # TODO: Update the package meta-data
 NAME = "opyrator"
 MAIN_PACKAGE = "opyrator"
-DESCRIPTION = "Python functions with superpowers. Instantly deploy your functions with REST API, UI, and more."
+DESCRIPTION = "Turn python functions into microservices with auto-generated HTTP API, interactive UI, and more."
 URL = "https://github.com/ml-tooling/opyrator"
 EMAIL = "team@mltooling.org"
 AUTHOR = "ML Tooling Team"
