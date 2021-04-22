@@ -123,7 +123,7 @@ docker run -p 8080:8080 mltooling/opyrator-playground:latest
 
 - 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/generate_text/app.py)
 - 🌅&nbsp; [UI Demo](https://play.mltooling.com/opyrator/demos/generate_text_ui/)
-- 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=https://github.com/ml-tooling/opyrator/blob/main/docs/openapi-demo-specs/generate-text-openapi-spec.json)
+- 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=https://raw.githubusercontent.com/ml-tooling/opyrator/main/docs/openapi-demo-specs/generate-text-openapi-spec.json)
 
 <details>
 <summary>Run this demo on your machine (click to expand...)</summary>
@@ -147,7 +147,7 @@ Visit http://localhost:8051 in your browser to access the UI of the demo. Use `l
 
 - 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/question_answering/app.py)
 - 🌅&nbsp; [UI Demo](https://play.mltooling.com/opyrator/demos/question_answering_ui/)
-- 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=https://github.com/ml-tooling/opyrator/blob/main/docs/openapi-demo-specs/question-answering-openapi-spec.json)
+- 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=https://raw.githubusercontent.com/ml-tooling/opyrator/main/docs/openapi-demo-specs/question-answering-openapi-spec.json)
 
 <details>
 <summary>Run this demo on your machine (click to expand...)</summary>
@@ -171,7 +171,7 @@ Visit http://localhost:8051 in your browser to access the UI of the demo. Use `l
 
 - 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/image_super_resolution/app.py)
 - 🌅&nbsp; [UI Demo](https://play.mltooling.com/opyrator/demos/image_super_resolution_ui/)
-- 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=https://github.com/ml-tooling/opyrator/blob/main/docs/openapi-demo-specs/image-super-resolution-openapi-spec.json)
+- 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=https://raw.githubusercontent.com/ml-tooling/opyrator/main/docs/openapi-demo-specs/image-super-resolution-openapi-spec.json)
 
 <details>
 <summary>Run this demo on your machine (click to expand...)</summary>
@@ -195,7 +195,7 @@ Visit http://localhost:8051 in your browser to access the UI of the demo. Use `l
 
 - 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/preprocess_text/app.py)
 - 🌅&nbsp; [UI Demo](https://play.mltooling.com/opyrator/demos/preprocess_text_ui/)
-- 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=https://github.com/ml-tooling/opyrator/blob/main/docs/openapi-demo-specs/preprocess-text-openapi-spec.json)
+- 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=https://raw.githubusercontent.com/ml-tooling/opyrator/main/docs/openapi-demo-specs/preprocess-text-openapi-spec.json)
 
 <details>
 <summary>Run this demo on your machine (click to expand...)</summary>
@@ -219,7 +219,7 @@ Visit http://localhost:8051 in your browser to access the UI of the demo. Use `l
 
 - 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/detect_language/app.py)
 - 🌅&nbsp; [UI Demo](https://play.mltooling.com/opyrator/demos/detect_language_ui/)
-- 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=https://github.com/ml-tooling/opyrator/blob/main/docs/openapi-demo-specs/detect-language-openapi-spec.json)
+- 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=https://raw.githubusercontent.com/ml-tooling/opyrator/main/docs/openapi-demo-specs/detect-language-openapi-spec.json)
 
 <details>
 <summary>Run this demo on your machine (click to expand...)</summary>
@@ -243,7 +243,7 @@ Visit http://localhost:8051 in your browser to access the UI of the demo. Use `l
 
 - 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/seperate_audio/app.py)
 - 🌅&nbsp; [UI Demo](https://play.mltooling.com/opyrator/demos/seperate_audio_ui/)
-- 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=https://github.com/ml-tooling/opyrator/blob/main/docs/openapi-demo-specs/seperate-audio-openapi-spec.json)
+- 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=https://raw.githubusercontent.com/ml-tooling/opyrator/main/docs/openapi-demo-specs/seperate-audio-openapi-spec.json)
 
 <details>
 <summary>Run this demo on your machine (click to expand...)</summary>
@@ -267,7 +267,7 @@ Visit http://localhost:8051 in your browser to access the UI of the demo. Use `l
 
 - 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/train_word_vectors/app.py)
 - 🌅&nbsp; [UI Demo](https://play.mltooling.com/opyrator/demos/train_word_vectors_ui/)
-- 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=https://github.com/ml-tooling/opyrator/blob/main/docs/openapi-demo-specs/train-word-vectors-openapi-spec.json)
+- 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=https://raw.githubusercontent.com/ml-tooling/opyrator/main/docs/openapi-demo-specs/train-word-vectors-openapi-spec.json)
 
 <details>
 <summary>Run this demo on your machine (click to expand...)</summary>
@@ -291,7 +291,7 @@ Visit http://localhost:8051 in your browser to access the UI of the demo. Use `l
 
 - 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/named_entity_recognition/app.py)
 - 🌅&nbsp; [UI Demo](https://play.mltooling.com/opyrator/demos/named_entity_recognition_ui/)
-- 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=https://github.com/ml-tooling/opyrator/blob/main/docs/openapi-demo-specs/named-entity-recognition-openapi-spec.json)
+- 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=https://raw.githubusercontent.com/ml-tooling/opyrator/main/docs/openapi-demo-specs/named-entity-recognition-openapi-spec.json)
 
 <details>
 <summary>Run this demo on your machine (click to expand...)</summary>
@@ -315,7 +315,7 @@ Visit http://localhost:8051 in your browser to access the UI of the demo. Use `l
 
 - 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/showcase_components/app.py)
 - 🌅&nbsp; [UI Demo](https://play.mltooling.com/opyrator/demos/showcase_components_ui/)
-- 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=https://github.com/ml-tooling/opyrator/blob/main/docs/openapi-demo-specs/showcase-components-openapi-spec.json)
+- 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=https://raw.githubusercontent.com/ml-tooling/opyrator/main/docs/openapi-demo-specs/showcase-components-openapi-spec.json)
 
 <details>
 <summary>Run this demo on your machine (click to expand...)</summary>
