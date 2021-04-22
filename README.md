@@ -30,7 +30,7 @@ Instantly turn your Python functions into production-ready microservices. Deploy
 
 <sup>Alpha Version: Only suggested for experimental usage.</sup>
 
-<img style="width: 100%" src="./docs/images/opyrator-header.png"/>
+<img style="width: 100%" src="https://raw.githubusercontent.com/ml-tooling/opyrator/main/docs/images/opyrator-header.png"/>
 
 ---
 
@@ -88,7 +88,7 @@ pip install opyrator
 
     _In the output, there's a line that shows where your web app is being served, on your local machine._
 
-    <img style="width: 100%" src="./docs/images/opyrator-hello-world-ui.png"/>
+    <img style="width: 100%" src="https://raw.githubusercontent.com/ml-tooling/opyrator/main/docs/images/opyrator-hello-world-ui.png"/>
 
 4. Run the HTTP API server from command-line:
 
@@ -97,7 +97,7 @@ pip install opyrator
     ```
     _In the output, there's a line that shows where your web service is being served, on your local machine._
 
-    <img style="width: 100%" src="./docs/images/opyrator-hello-world-api.png"/>
+    <img style="width: 100%" src="https://raw.githubusercontent.com/ml-tooling/opyrator/main/docs/images/opyrator-hello-world-api.png"/>
 
 5. Find out more usage information in the [Features](#features) section or get inspired by our [examples](#examples).
 
@@ -119,7 +119,7 @@ docker run -p 8080:8080 mltooling/opyrator-playground:latest
 
 ### Text Generation
 
-<img style="width: 100%" src="./docs/images/text-generation-demo.png"/>
+<img style="width: 100%" src="https://raw.githubusercontent.com/ml-tooling/opyrator/main/docs/images/text-generation-demo.png"/>
 
 - 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/generate_text/app.py)
 - 🌅&nbsp; [UI Demo](https://play.mltooling.com/opyrator/demos/generate_text_ui/)
@@ -143,7 +143,7 @@ Visit http://localhost:8051 in your browser to access the UI of the demo. Use `l
 
 ### Question Answering
 
-<img style="width: 100%" src="./docs/images/question-answering-demo.png"/>
+<img style="width: 100%" src="https://raw.githubusercontent.com/ml-tooling/opyrator/main/docs/images/question-answering-demo.png"/>
 
 - 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/question_answering/app.py)
 - 🌅&nbsp; [UI Demo](https://play.mltooling.com/opyrator/demos/question_answering_ui/)
@@ -167,7 +167,7 @@ Visit http://localhost:8051 in your browser to access the UI of the demo. Use `l
 
 ### Image Super Resolution
 
-<img style="width: 100%" src="./docs/images/image-super-resolution-demo.png"/>
+<img style="width: 100%" src="https://raw.githubusercontent.com/ml-tooling/opyrator/main/docs/images/image-super-resolution-demo.png"/>
 
 - 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/image_super_resolution/app.py)
 - 🌅&nbsp; [UI Demo](https://play.mltooling.com/opyrator/demos/image_super_resolution_ui/)
@@ -191,7 +191,7 @@ Visit http://localhost:8051 in your browser to access the UI of the demo. Use `l
 
 ### Text Preprocessing
 
-<img style="width: 100%" src="./docs/images/text-preprocessing-demo.png"/>
+<img style="width: 100%" src="https://raw.githubusercontent.com/ml-tooling/opyrator/main/docs/images/text-preprocessing-demo.png"/>
 
 - 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/preprocess_text/app.py)
 - 🌅&nbsp; [UI Demo](https://play.mltooling.com/opyrator/demos/preprocess_text_ui/)
@@ -215,7 +215,7 @@ Visit http://localhost:8051 in your browser to access the UI of the demo. Use `l
 
 ### Language Detection
 
-<img style="width: 100%" src="./docs/images/language-detection-demo.png"/>
+<img style="width: 100%" src="https://raw.githubusercontent.com/ml-tooling/opyrator/main/docs/images/language-detection-demo.png"/>
 
 - 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/detect_language/app.py)
 - 🌅&nbsp; [UI Demo](https://play.mltooling.com/opyrator/demos/detect_language_ui/)
@@ -239,7 +239,7 @@ Visit http://localhost:8051 in your browser to access the UI of the demo. Use `l
 
 ### Audio Seperation
 
-<img style="width: 100%" src="./docs/images/audio-seperation-demo.png"/>
+<img style="width: 100%" src="https://raw.githubusercontent.com/ml-tooling/opyrator/main/docs/images/audio-seperation-demo.png"/>
 
 - 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/seperate_audio/app.py)
 - 🌅&nbsp; [UI Demo](https://play.mltooling.com/opyrator/demos/seperate_audio_ui/)
@@ -263,7 +263,7 @@ Visit http://localhost:8051 in your browser to access the UI of the demo. Use `l
 
 ### Word Vectors Training
 
-<img style="width: 100%" src="./docs/images/train-word-vectors-demo.png"/>
+<img style="width: 100%" src="https://raw.githubusercontent.com/ml-tooling/opyrator/main/docs/images/train-word-vectors-demo.png"/>
 
 - 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/train_word_vectors/app.py)
 - 🌅&nbsp; [UI Demo](https://play.mltooling.com/opyrator/demos/train_word_vectors_ui/)
@@ -287,7 +287,7 @@ Visit http://localhost:8051 in your browser to access the UI of the demo. Use `l
 
 ### Named Entity Recognition
 
-<img style="width: 100%" src="./docs/images/named-entity-recognition-demo.png"/>
+<img style="width: 100%" src="https://raw.githubusercontent.com/ml-tooling/opyrator/main/docs/images/named-entity-recognition-demo.png"/>
 
 - 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/named_entity_recognition/app.py)
 - 🌅&nbsp; [UI Demo](https://play.mltooling.com/opyrator/demos/named_entity_recognition_ui/)
@@ -311,7 +311,7 @@ Visit http://localhost:8051 in your browser to access the UI of the demo. Use `l
 
 ### Components Showcase
 
-<img style="width: 100%" src="./docs/images/components-showcase-demo.png"/>
+<img style="width: 100%" src="https://raw.githubusercontent.com/ml-tooling/opyrator/main/docs/images/components-showcase-demo.png"/>
 
 - 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/showcase_components/app.py)
 - 🌅&nbsp; [UI Demo](https://play.mltooling.com/opyrator/demos/showcase_components_ui/)
@@ -367,7 +367,7 @@ opyrator launch-api my_opyrator:hello_world
 
 This will launch a [FastAPI](https://fastapi.tiangolo.com/) server based on the [OpenAPI standard](https://swagger.io/specification) and with an automatic interactive documentation.
 
-<img style="width: 100%" src="./docs/images/opyrator-hello-world-api.png"/>
+<img style="width: 100%" src="https://raw.githubusercontent.com/ml-tooling/opyrator/main/docs/images/opyrator-hello-world-api.png"/>
 
 _💡 Make sure that all requirements of your script are installed in the active Python enviornment._
 
@@ -391,7 +391,7 @@ You can launch a graphical user interface - powered by  [Streamlit](https://stre
 opyrator launch-ui my_opyrator:hello_world
 ```
 
-<img style="width: 100%" src="./docs/images/opyrator-hello-world-ui.png"/>
+<img style="width: 100%" src="https://raw.githubusercontent.com/ml-tooling/opyrator/main/docs/images/opyrator-hello-world-ui.png"/>
 
 _💡 Make sure that all requirements of your script are installed in the active Python environment._
 
@@ -425,7 +425,7 @@ An Opyrator can also be executed via command-line:
 opyrator call my_opyrator:hello_world '{"message": "hello"}'
 ```
 
-<img style="width: 80%" src="./docs/images/opyrator-cli.png"/>
+<img style="width: 80%" src="https://raw.githubusercontent.com/ml-tooling/opyrator/main/docs/images/opyrator-cli.png"/>
 
 The CLI interface also works using the [zip export format](#zip-export):
 
