@@ -122,7 +122,7 @@ docker run -p 8080:8080 mltooling/opyrator-playground:latest
 <img style="width: 100%" src="./docs/images/text-generation-demo.png"/>
 
 - 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/generate_text/app.py)
-- 🌅&nbsp; [UI Demo](#TODO)
+- 🌅&nbsp; [UI Demo](https://play.mltooling.com/opyrator/demos/generate_text_ui/)
 - 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=)
 
 <details>
@@ -141,13 +141,12 @@ Visit http://localhost:8051 in your browser to access the UI of the demo. Use `l
 
 </details>
 
-
 ### Question Answering
 
 <img style="width: 100%" src="./docs/images/question-answering-demo.png"/>
 
 - 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/question_answering/app.py)
-- 🌅&nbsp; [UI Demo](#TODO)
+- 🌅&nbsp; [UI Demo](https://play.mltooling.com/opyrator/demos/question_answering_ui/)
 - 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=)
 
 <details>
@@ -171,7 +170,7 @@ Visit http://localhost:8051 in your browser to access the UI of the demo. Use `l
 <img style="width: 100%" src="./docs/images/image-super-resolution-demo.png"/>
 
 - 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/image_super_resolution/app.py)
-- 🌅&nbsp; [UI Demo](#TODO)
+- 🌅&nbsp; [UI Demo](https://play.mltooling.com/opyrator/demos/image_super_resolution_ui/)
 - 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=)
 
 <details>
@@ -195,7 +194,7 @@ Visit http://localhost:8051 in your browser to access the UI of the demo. Use `l
 <img style="width: 100%" src="./docs/images/text-preprocessing-demo.png"/>
 
 - 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/preprocess_text/app.py)
-- 🌅&nbsp; [UI Demo](#TODO)
+- 🌅&nbsp; [UI Demo](https://play.mltooling.com/opyrator/demos/preprocess_text_ui/)
 - 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=)
 
 <details>
@@ -219,7 +218,7 @@ Visit http://localhost:8051 in your browser to access the UI of the demo. Use `l
 <img style="width: 100%" src="./docs/images/language-detection-demo.png"/>
 
 - 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/detect_language/app.py)
-- 🌅&nbsp; [UI Demo](#TODO)
+- 🌅&nbsp; [UI Demo](https://play.mltooling.com/opyrator/demos/detect_language_ui/)
 - 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=)
 
 <details>
@@ -243,7 +242,7 @@ Visit http://localhost:8051 in your browser to access the UI of the demo. Use `l
 <img style="width: 100%" src="./docs/images/audio-seperation-demo.png"/>
 
 - 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/seperate_audio/app.py)
-- 🌅&nbsp; [UI Demo](#TODO)
+- 🌅&nbsp; [UI Demo](https://play.mltooling.com/opyrator/demos/seperate_audio_ui/)
 - 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=)
 
 <details>
@@ -267,7 +266,7 @@ Visit http://localhost:8051 in your browser to access the UI of the demo. Use `l
 <img style="width: 100%" src="./docs/images/train-word-vectors-demo.png"/>
 
 - 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/train_word_vectors/app.py)
-- 🌅&nbsp; [UI Demo](#TODO)
+- 🌅&nbsp; [UI Demo](https://play.mltooling.com/opyrator/demos/train_word_vectors_ui/)
 - 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=)
 
 <details>
@@ -291,7 +290,7 @@ Visit http://localhost:8051 in your browser to access the UI of the demo. Use `l
 <img style="width: 100%" src="./docs/images/named-entity-recognition-demo.png"/>
 
 - 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/named_entity_recognition/app.py)
-- 🌅&nbsp; [UI Demo](#TODO)
+- 🌅&nbsp; [UI Demo](https://play.mltooling.com/opyrator/demos/named_entity_recognition_ui/)
 - 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=)
 
 <details>
@@ -315,7 +314,7 @@ Visit http://localhost:8051 in your browser to access the UI of the demo. Use `l
 <img style="width: 100%" src="./docs/images/components-showcase-demo.png"/>
 
 - 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/showcase_components/app.py)
-- 🌅&nbsp; [UI Demo](#TODO)
+- 🌅&nbsp; [UI Demo](https://play.mltooling.com/opyrator/demos/showcase_components_ui/)
 - 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=)
 
 <details>
