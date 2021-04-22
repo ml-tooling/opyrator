@@ -1,1 +1,174 @@
-{"openapi":"3.0.2","info":{"title":"Train Word Vectors - Opyrator","description":"Trains word vectors via [FastText](https://fasttext.cc) based on a provided text.","version":"0.1.0"},"paths":{"/call":{"post":{"summary":"Execute the opyrator.","description":"Executes this opyrator.","operationId":"call","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/WordVectorTrainingInput"}}},"required":true},"responses":{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/WordVectorTrainingOutput"}}}},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/info":{"get":{"summary":"Get info metadata.","description":"Returns informational metadata about this Opyrator.","operationId":"info","responses":{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"title":"Response Info Info Get","type":"object"}}}}}}}},"components":{"schemas":{"HTTPValidationError":{"title":"HTTPValidationError","type":"object","properties":{"detail":{"title":"Detail","type":"array","items":{"$ref":"#/components/schemas/ValidationError"}}}},"LossFunction":{"title":"LossFunction","enum":["ns","hs","softmax","ova"],"type":"string","description":"An enumeration."},"Model":{"title":"Model","enum":["skipgram","cbow"],"type":"string","description":"An enumeration."},"ValidationError":{"title":"ValidationError","required":["loc","msg","type"],"type":"object","properties":{"loc":{"title":"Location","type":"array","items":{"type":"string"}},"msg":{"title":"Message","type":"string"},"type":{"title":"Error Type","type":"string"}}},"WordVectorTrainingInput":{"title":"WordVectorTrainingInput","required":["text"],"type":"object","properties":{"text":{"title":"Text","maxLength":5000,"minLength":10,"type":"string","description":"The text to use for training the word vector model."},"model":{"title":"Select Model Type","allOf":[{"$ref":"#/components/schemas/Model"}],"description":"Model for computing word representations","default":"skipgram"},"learning_rate":{"title":"Learning Rate","maximum":1.0,"exclusiveMinimum":0.0,"type":"number","default":0.05},"dimension":{"title":"Dimension","maximum":100.0,"minimum":10.0,"type":"integer","description":"Size of word vectors.","default":50},"epoch":{"title":"Epoch","maximum":20.0,"minimum":1.0,"type":"integer","default":5},"min_count":{"title":"Min Count","minimum":1.0,"type":"integer","description":"Minimal number of word occurrences.","default":1},"loss_function":{"title":"Loss Function","allOf":[{"$ref":"#/components/schemas/LossFunction"}],"default":"ns"}}},"WordVectorTrainingOutput":{"title":"WordVectorTrainingOutput","required":["vector_file"],"type":"object","properties":{"vector_file":{"title":"Vector File","type":"string","format":"byte"}}}}}}
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "Train Word Vectors - Opyrator",
+    "description": "Trains word vectors via [FastText](https://fasttext.cc) based on a provided text.",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/call": {
+      "post": {
+        "summary": "Execute the opyrator.",
+        "description": "Executes this opyrator.",
+        "operationId": "call",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WordVectorTrainingInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WordVectorTrainingOutput"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/HTTPValidationError" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/info": {
+      "get": {
+        "summary": "Get info metadata.",
+        "description": "Returns informational metadata about this Opyrator.",
+        "operationId": "info",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Info Info Get",
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "HTTPValidationError": {
+        "title": "HTTPValidationError",
+        "type": "object",
+        "properties": {
+          "detail": {
+            "title": "Detail",
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/ValidationError" }
+          }
+        }
+      },
+      "LossFunction": {
+        "title": "LossFunction",
+        "enum": ["ns", "hs", "softmax", "ova"],
+        "type": "string",
+        "description": "An enumeration."
+      },
+      "Model": {
+        "title": "Model",
+        "enum": ["skipgram", "cbow"],
+        "type": "string",
+        "description": "An enumeration."
+      },
+      "ValidationError": {
+        "title": "ValidationError",
+        "required": ["loc", "msg", "type"],
+        "type": "object",
+        "properties": {
+          "loc": {
+            "title": "Location",
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "msg": { "title": "Message", "type": "string" },
+          "type": { "title": "Error Type", "type": "string" }
+        }
+      },
+      "WordVectorTrainingInput": {
+        "title": "WordVectorTrainingInput",
+        "required": ["text"],
+        "type": "object",
+        "properties": {
+          "text": {
+            "title": "Text",
+            "maxLength": 5000,
+            "minLength": 10,
+            "type": "string",
+            "description": "The text to use for training the word vector model."
+          },
+          "model": {
+            "title": "Select Model Type",
+            "allOf": [{ "$ref": "#/components/schemas/Model" }],
+            "description": "Model for computing word representations",
+            "default": "skipgram"
+          },
+          "learning_rate": {
+            "title": "Learning Rate",
+            "maximum": 1.0,
+            "exclusiveMinimum": 0.0,
+            "type": "number",
+            "default": 0.05
+          },
+          "dimension": {
+            "title": "Dimension",
+            "maximum": 100.0,
+            "minimum": 10.0,
+            "type": "integer",
+            "description": "Size of word vectors.",
+            "default": 50
+          },
+          "epoch": {
+            "title": "Epoch",
+            "maximum": 20.0,
+            "minimum": 1.0,
+            "type": "integer",
+            "default": 5
+          },
+          "min_count": {
+            "title": "Min Count",
+            "minimum": 1.0,
+            "type": "integer",
+            "description": "Minimal number of word occurrences.",
+            "default": 1
+          },
+          "loss_function": {
+            "title": "Loss Function",
+            "allOf": [{ "$ref": "#/components/schemas/LossFunction" }],
+            "default": "ns"
+          }
+        }
+      },
+      "WordVectorTrainingOutput": {
+        "title": "WordVectorTrainingOutput",
+        "required": ["vector_file"],
+        "type": "object",
+        "properties": {
+          "vector_file": {
+            "title": "Vector File",
+            "type": "string",
+            "format": "byte"
+          }
+        }
+      }
+    }
+  }
+}

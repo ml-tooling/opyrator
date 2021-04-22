@@ -1,1 +1,121 @@
-{"openapi":"3.0.2","info":{"title":"Image Super Resolution - Opyrator","description":"Upscale and improve the quality of low resolution images.\n\nThis opyrator uses the [image-super-resolution](https://github.com/idealo/image-super-resolution) library.\n\nTo try it out, you can use this [example image](https://github.com/idealo/image-super-resolution/raw/master/data/input/sample/baboon.png).","version":"0.1.0"},"paths":{"/call":{"post":{"summary":"Execute the opyrator.","description":"Executes this opyrator.","operationId":"call","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ImageSuperResolutionInput"}}},"required":true},"responses":{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/ImageSuperResolutionOutput"}}}},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/info":{"get":{"summary":"Get info metadata.","description":"Returns informational metadata about this Opyrator.","operationId":"info","responses":{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"title":"Response Info Info Get","type":"object"}}}}}}}},"components":{"schemas":{"HTTPValidationError":{"title":"HTTPValidationError","type":"object","properties":{"detail":{"title":"Detail","type":"array","items":{"$ref":"#/components/schemas/ValidationError"}}}},"ImageSuperResolutionInput":{"title":"ImageSuperResolutionInput","required":["image_file"],"type":"object","properties":{"image_file":{"title":"Image File","type":"string","format":"byte"}}},"ImageSuperResolutionOutput":{"title":"ImageSuperResolutionOutput","required":["upscaled_image_file"],"type":"object","properties":{"upscaled_image_file":{"title":"Upscaled Image File","type":"string","description":"Upscaled image via super resolution model.","format":"byte"}}},"ValidationError":{"title":"ValidationError","required":["loc","msg","type"],"type":"object","properties":{"loc":{"title":"Location","type":"array","items":{"type":"string"}},"msg":{"title":"Message","type":"string"},"type":{"title":"Error Type","type":"string"}}}}}}
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "Image Super Resolution - Opyrator",
+    "description": "Upscale and improve the quality of low resolution images.\n\nThis opyrator uses the [image-super-resolution](https://github.com/idealo/image-super-resolution) library.\n\nTo try it out, you can use this [example image](https://github.com/idealo/image-super-resolution/raw/master/data/input/sample/baboon.png).",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/call": {
+      "post": {
+        "summary": "Execute the opyrator.",
+        "description": "Executes this opyrator.",
+        "operationId": "call",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImageSuperResolutionInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ImageSuperResolutionOutput"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/HTTPValidationError" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/info": {
+      "get": {
+        "summary": "Get info metadata.",
+        "description": "Returns informational metadata about this Opyrator.",
+        "operationId": "info",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Info Info Get",
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "HTTPValidationError": {
+        "title": "HTTPValidationError",
+        "type": "object",
+        "properties": {
+          "detail": {
+            "title": "Detail",
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/ValidationError" }
+          }
+        }
+      },
+      "ImageSuperResolutionInput": {
+        "title": "ImageSuperResolutionInput",
+        "required": ["image_file"],
+        "type": "object",
+        "properties": {
+          "image_file": {
+            "title": "Image File",
+            "type": "string",
+            "format": "byte"
+          }
+        }
+      },
+      "ImageSuperResolutionOutput": {
+        "title": "ImageSuperResolutionOutput",
+        "required": ["upscaled_image_file"],
+        "type": "object",
+        "properties": {
+          "upscaled_image_file": {
+            "title": "Upscaled Image File",
+            "type": "string",
+            "description": "Upscaled image via super resolution model.",
+            "format": "byte"
+          }
+        }
+      },
+      "ValidationError": {
+        "title": "ValidationError",
+        "required": ["loc", "msg", "type"],
+        "type": "object",
+        "properties": {
+          "loc": {
+            "title": "Location",
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "msg": { "title": "Message", "type": "string" },
+          "type": { "title": "Error Type", "type": "string" }
+        }
+      }
+    }
+  }
+}

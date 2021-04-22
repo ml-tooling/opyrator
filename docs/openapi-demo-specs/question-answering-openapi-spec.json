@@ -1,1 +1,138 @@
-{"openapi":"3.0.2","info":{"title":"Question Answering - Opyrator","description":"Question answering based on a text used as context.","version":"0.1.0"},"paths":{"/call":{"post":{"summary":"Execute the opyrator.","description":"Executes this opyrator.","operationId":"call","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/QuestionAnsweringInput"}}},"required":true},"responses":{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/ClassificationOutput"}}}},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/info":{"get":{"summary":"Get info metadata.","description":"Returns informational metadata about this Opyrator.","operationId":"info","responses":{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"title":"Response Info Info Get","type":"object"}}}}}}}},"components":{"schemas":{"ClassificationOutput":{"title":"ClassificationOutput","type":"array","items":{"$ref":"#/components/schemas/ScoredLabel"}},"HTTPValidationError":{"title":"HTTPValidationError","type":"object","properties":{"detail":{"title":"Detail","type":"array","items":{"$ref":"#/components/schemas/ValidationError"}}}},"QuestionAnsweringInput":{"title":"QuestionAnsweringInput","required":["context","question"],"type":"object","properties":{"context":{"title":"Context","maxLength":1000,"type":"string","description":"A string that contains the answer to the question.","example":"My name is Sarah and I live in London"},"question":{"title":"Question","maxLength":140,"type":"string","description":"The question as a string that has an answer within context.","example":"Where do I live?"},"number_of_answers":{"title":"Number Of Answers","minimum":1.0,"type":"integer","description":"The number of answers to return","default":2}}},"ScoredLabel":{"title":"ScoredLabel","required":["label","score"],"type":"object","properties":{"label":{"title":"Label","type":"string"},"score":{"title":"Score","type":"number"}}},"ValidationError":{"title":"ValidationError","required":["loc","msg","type"],"type":"object","properties":{"loc":{"title":"Location","type":"array","items":{"type":"string"}},"msg":{"title":"Message","type":"string"},"type":{"title":"Error Type","type":"string"}}}}}}
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "Question Answering - Opyrator",
+    "description": "Question answering based on a text used as context.",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/call": {
+      "post": {
+        "summary": "Execute the opyrator.",
+        "description": "Executes this opyrator.",
+        "operationId": "call",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QuestionAnsweringInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClassificationOutput"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/HTTPValidationError" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/info": {
+      "get": {
+        "summary": "Get info metadata.",
+        "description": "Returns informational metadata about this Opyrator.",
+        "operationId": "info",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Info Info Get",
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ClassificationOutput": {
+        "title": "ClassificationOutput",
+        "type": "array",
+        "items": { "$ref": "#/components/schemas/ScoredLabel" }
+      },
+      "HTTPValidationError": {
+        "title": "HTTPValidationError",
+        "type": "object",
+        "properties": {
+          "detail": {
+            "title": "Detail",
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/ValidationError" }
+          }
+        }
+      },
+      "QuestionAnsweringInput": {
+        "title": "QuestionAnsweringInput",
+        "required": ["context", "question"],
+        "type": "object",
+        "properties": {
+          "context": {
+            "title": "Context",
+            "maxLength": 1000,
+            "type": "string",
+            "description": "A string that contains the answer to the question.",
+            "example": "My name is Sarah and I live in London"
+          },
+          "question": {
+            "title": "Question",
+            "maxLength": 140,
+            "type": "string",
+            "description": "The question as a string that has an answer within context.",
+            "example": "Where do I live?"
+          },
+          "number_of_answers": {
+            "title": "Number Of Answers",
+            "minimum": 1.0,
+            "type": "integer",
+            "description": "The number of answers to return",
+            "default": 2
+          }
+        }
+      },
+      "ScoredLabel": {
+        "title": "ScoredLabel",
+        "required": ["label", "score"],
+        "type": "object",
+        "properties": {
+          "label": { "title": "Label", "type": "string" },
+          "score": { "title": "Score", "type": "number" }
+        }
+      },
+      "ValidationError": {
+        "title": "ValidationError",
+        "required": ["loc", "msg", "type"],
+        "type": "object",
+        "properties": {
+          "loc": {
+            "title": "Location",
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "msg": { "title": "Message", "type": "string" },
+          "type": { "title": "Error Type", "type": "string" }
+        }
+      }
+    }
+  }
+}

@@ -1,1 +1,104 @@
-{"openapi":"3.0.2","info":{"title":"Hello World - Opyrator","description":"Returns the `message` of the input data.","version":"0.1.0"},"paths":{"/call":{"post":{"summary":"Execute the opyrator.","description":"Executes this opyrator.","operationId":"call","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/Input"}}},"required":true},"responses":{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Output"}}}},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/info":{"get":{"summary":"Get info metadata.","description":"Returns informational metadata about this Opyrator.","operationId":"info","responses":{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"title":"Response Info Info Get","type":"object"}}}}}}}},"components":{"schemas":{"HTTPValidationError":{"title":"HTTPValidationError","type":"object","properties":{"detail":{"title":"Detail","type":"array","items":{"$ref":"#/components/schemas/ValidationError"}}}},"Input":{"title":"Input","required":["message"],"type":"object","properties":{"message":{"title":"Message","type":"string"}}},"Output":{"title":"Output","required":["message"],"type":"object","properties":{"message":{"title":"Message","type":"string"}}},"ValidationError":{"title":"ValidationError","required":["loc","msg","type"],"type":"object","properties":{"loc":{"title":"Location","type":"array","items":{"type":"string"}},"msg":{"title":"Message","type":"string"},"type":{"title":"Error Type","type":"string"}}}}}}
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "Hello World - Opyrator",
+    "description": "Returns the `message` of the input data.",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/call": {
+      "post": {
+        "summary": "Execute the opyrator.",
+        "description": "Executes this opyrator.",
+        "operationId": "call",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/Input" }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Output" }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/HTTPValidationError" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/info": {
+      "get": {
+        "summary": "Get info metadata.",
+        "description": "Returns informational metadata about this Opyrator.",
+        "operationId": "info",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Info Info Get",
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "HTTPValidationError": {
+        "title": "HTTPValidationError",
+        "type": "object",
+        "properties": {
+          "detail": {
+            "title": "Detail",
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/ValidationError" }
+          }
+        }
+      },
+      "Input": {
+        "title": "Input",
+        "required": ["message"],
+        "type": "object",
+        "properties": { "message": { "title": "Message", "type": "string" } }
+      },
+      "Output": {
+        "title": "Output",
+        "required": ["message"],
+        "type": "object",
+        "properties": { "message": { "title": "Message", "type": "string" } }
+      },
+      "ValidationError": {
+        "title": "ValidationError",
+        "required": ["loc", "msg", "type"],
+        "type": "object",
+        "properties": {
+          "loc": {
+            "title": "Location",
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "msg": { "title": "Message", "type": "string" },
+          "type": { "title": "Error Type", "type": "string" }
+        }
+      }
+    }
+  }
+}
