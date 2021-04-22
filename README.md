@@ -79,7 +79,7 @@ pip install opyrator
 
     _Requirements: The function needs to be annotated with typing hints, and the `input` parameter and return value needs to be based on [Pydantic models](https://pydantic-docs.helpmanual.io/)._
 
-2. Copy this code to a file `my_opyrator.py`
+2. Copy this code to a file, e.g. `my_opyrator.py`
 3. Run the UI server from command-line:
 
     ```bash
@@ -99,7 +99,7 @@ pip install opyrator
 
     <img style="width: 100%" src="./docs/images/opyrator-hello-world-api.png"/>
 
-5. Find out more usage usage information in the [Features](#features) section or get inspired by our [examples](#examples).
+5. Find out more usage information in the [Features](#features) section or get inspired by our [examples](#examples).
 
 ## Examples
 
