@@ -49,7 +49,7 @@ setup(
         "typer",
         "fastapi",
         "uvicorn",
-        "streamlit",
+        "streamlit>=0.72",
         "plotly",
         # Not required anymore
         # "typing_utils",
