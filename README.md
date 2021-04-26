@@ -77,7 +77,7 @@ pip install opyrator
         return Output(message=input.message)
     ```
 
-    _💡 An Opyrator-compatible function is required to have an `input` parameter and return value based on [Pydantic models](https://pydantic-docs.helpmanual.io/). The input und output models are specified via [type hints](https://docs.python.org/3/library/typing.html)._
+    _💡 An Opyrator-compatible function is required to have an `input` parameter and return value based on [Pydantic models](https://pydantic-docs.helpmanual.io/). The input and output models are specified via [type hints](https://docs.python.org/3/library/typing.html)._
 
 2. Copy this code to a file, e.g. `my_opyrator.py`
 3. Run the UI server from command-line:
