@@ -8,11 +8,11 @@ from pydantic import BaseModel, Field
 from opyrator.components.types import FileContent
 
 
-class AudioSeperationInput(BaseModel):
+class AudioSeparationInput(BaseModel):
     audio_file: FileContent = Field(..., mime_type="audio/mpeg")
 
 
-class AudioSeperationOutput(BaseModel):
+class AudioSeparationOutput(BaseModel):
     vocals_file: FileContent = Field(
         ...,
         mime_type="audio/wav",
@@ -25,8 +25,8 @@ class AudioSeperationOutput(BaseModel):
     )
 
 
-def seperate_audio(input: AudioSeperationInput) -> AudioSeperationOutput:
-    """Seperation of a music file to vocals (singing voice) and accompaniment.
+def separate_audio(input: AudioSeparationInput) -> AudioSeparationOutput:
+    """Separation of a music file to vocals (singing voice) and accompaniment.
 
     To try it out, you can use this example audio file: [audio_example.mp3](https://github.com/deezer/spleeter/raw/master/audio_example.mp3).
     """
@@ -52,6 +52,6 @@ def seperate_audio(input: AudioSeperationInput) -> AudioSeperationOutput:
             with open(os.path.join(tmp_dir, "accompaniment.wav"), "rb") as f:
                 accompaniment_file = f.read()
 
-            return AudioSeperationOutput(
+            return AudioSeparationOutput(
                 vocals_file=vocals_file, accompaniment_file=accompaniment_file
             )
