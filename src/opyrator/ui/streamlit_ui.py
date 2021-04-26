@@ -39,7 +39,9 @@ def launch_ui(opyrator_path: str, port: int = 8501) -> None:
     # print(_get_command_line_as_string())
 
     # Use delete=False and manually delete the file because otherwise it will show a 'Permission denied' error on Windows
-    with NamedTemporaryFile(suffix=".py", mode="w", encoding="utf-8", delete=False) as f:
+    with NamedTemporaryFile(
+        suffix=".py", mode="w", encoding="utf-8", delete=False
+    ) as f:
         f.write(STREAMLIT_RUNNER_SNIPPET.format(opyrator_path=opyrator_path))
         f.seek(0)
 
@@ -47,11 +49,11 @@ def launch_ui(opyrator_path: str, port: int = 8501) -> None:
         import subprocess
 
         python_path = f'PYTHONPATH="$PYTHONPATH:{getcwd()}"'
-        if system() == 'Windows':
+        if system() == "Windows":
             python_path = f"set PYTHONPATH=%PYTHONPATH%;{getcwd()} &&"
 
         subprocess.run(
-            f'{python_path} {sys.executable} -m streamlit run --server.port={port} --server.headless=True --runner.magicEnabled=False --server.maxUploadSize=50 --browser.gatherUsageStats=False {f.name}',
+            f"{python_path} {sys.executable} -m streamlit run --server.port={port} --server.headless=True --runner.magicEnabled=False --server.maxUploadSize=50 --browser.gatherUsageStats=False {f.name}",
             shell=True,
         )
 
