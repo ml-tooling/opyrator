@@ -46,9 +46,9 @@ def launch_ui(opyrator_path: str, port: int = 8501) -> None:
         # TODO: PYTHONPATH="$PYTHONPATH:/workspace/opyrator/src"
         import subprocess
 
-        python_path = 'PYTHONPATH="$PYTHONPATH:{getcwd()}"'
+        python_path = f'PYTHONPATH="$PYTHONPATH:{getcwd()}"'
         if system() == 'Windows':
-            python_path = "set PYTHONPATH=%PYTHONPATH%;{getcwd()} &&" 
+            python_path = f"set PYTHONPATH=%PYTHONPATH%;{getcwd()} &&" 
 
         subprocess.run(
             f'{python_path} {sys.executable} -m streamlit run --server.port={port} --server.headless=True --runner.magicEnabled=False --server.maxUploadSize=50 --browser.gatherUsageStats=False {f.name}',
