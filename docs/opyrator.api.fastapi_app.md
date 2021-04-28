@@ -10,7 +10,7 @@
 
 ---
 
-<a href="https://github.com/ml-tooling/opyrator/blob/main/src/opyrator/api/fastapi_app.py#L10"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ml-tooling/opyrator/blob/main/src/opyrator/api/fastapi_app.py#L11"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `launch_api`
 
@@ -25,7 +25,7 @@ launch_api(opyrator_path: str, port: int = 8501, host: str = '0') → None
 
 ---
 
-<a href="https://github.com/ml-tooling/opyrator/blob/main/src/opyrator/api/fastapi_app.py#L20"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="https://github.com/ml-tooling/opyrator/blob/main/src/opyrator/api/fastapi_app.py#L21"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `create_api`
 
