@@ -1,6 +1,7 @@
 from typing import Any, Dict
 
 from fastapi import FastAPI, status
+from fastapi.middleware.cors import CORSMiddleware
 from starlette.responses import RedirectResponse
 
 from opyrator import Opyrator
@@ -27,6 +28,14 @@ def create_api(opyrator: Opyrator) -> FastAPI:
     app = FastAPI(title=title, description=opyrator.description)
 
     patch_fastapi(app)
+
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=["*"],
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
 
     @app.post(
         "/call",
