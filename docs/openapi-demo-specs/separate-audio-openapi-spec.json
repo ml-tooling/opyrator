@@ -1,8 +1,8 @@
 {
   "openapi": "3.0.2",
   "info": {
-    "title": "Seperate Audio - Opyrator",
-    "description": "Seperation of a music file to vocals (singing voice) and accompaniment.\n\nTo try it out, you can use this example audio file: [audio_example.mp3](https://github.com/deezer/spleeter/raw/master/audio_example.mp3).",
+    "title": "Separate Audio - Opyrator",
+    "description": "Separation of a music file to vocals (singing voice) and accompaniment.\n\nTo try it out, you can use this example audio file: [audio_example.mp3](https://github.com/deezer/spleeter/raw/master/audio_example.mp3).",
     "version": "0.1.0"
   },
   "paths": {
@@ -14,7 +14,7 @@
         "requestBody": {
           "content": {
             "application/json": {
-              "schema": { "$ref": "#/components/schemas/AudioSeperationInput" }
+              "schema": { "$ref": "#/components/schemas/AudioSeparationInput" }
             }
           },
           "required": true
@@ -25,7 +25,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AudioSeperationOutput"
+                  "$ref": "#/components/schemas/AudioSeparationOutput"
                 }
               }
             }
@@ -64,8 +64,8 @@
   },
   "components": {
     "schemas": {
-      "AudioSeperationInput": {
-        "title": "AudioSeperationInput",
+      "AudioSeparationInput": {
+        "title": "AudioSeparationInput",
         "required": ["audio_file"],
         "type": "object",
         "properties": {
@@ -76,8 +76,8 @@
           }
         }
       },
-      "AudioSeperationOutput": {
-        "title": "AudioSeperationOutput",
+      "AudioSeparationOutput": {
+        "title": "AudioSeparationOutput",
         "required": ["vocals_file", "accompaniment_file"],
         "type": "object",
         "properties": {

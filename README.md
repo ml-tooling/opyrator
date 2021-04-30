@@ -237,13 +237,13 @@ Visit http://localhost:8051 in your browser to access the UI of the demo. Use `l
 
 </details>
 
-### Audio Seperation
+### Audio Separation
 
-<img style="width: 100%" src="https://raw.githubusercontent.com/ml-tooling/opyrator/main/docs/images/audio-seperation-demo.png"/>
+<img style="width: 100%" src="https://raw.githubusercontent.com/ml-tooling/opyrator/main/docs/images/audio-separation-demo.png"/>
 
-- 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/seperate_audio/app.py)
+- 📄&nbsp; [Source Code](https://github.com/ml-tooling/opyrator/blob/main/examples/separate_audio/app.py)
 - 🌅&nbsp; [UI Demo](https://play.mltooling.com/opyrator/demos/seperate_audio_ui/)
-- 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=https://raw.githubusercontent.com/ml-tooling/opyrator/main/docs/openapi-demo-specs/seperate-audio-openapi-spec.json)
+- 🔌&nbsp; [OpenAPI Spec](https://editor.swagger.io/?url=https://raw.githubusercontent.com/ml-tooling/opyrator/main/docs/openapi-demo-specs/separate-audio-openapi-spec.json)
 
 <details>
 <summary>Run this demo on your machine (click to expand...)</summary>
@@ -252,9 +252,9 @@ To run the demo on your local machine just execute the following commands:
 
 ```bash
 git clone https://github.com/ml-tooling/opyrator
-cd ./opyrator/examples/seperate_audio/
+cd ./opyrator/examples/separate_audio/
 pip install -r requirements.txt
-opyrator launch-ui app:seperate_audio --port 8051
+opyrator launch-ui app:separate_audio --port 8051
 ```
 
 Visit http://localhost:8051 in your browser to access the UI of the demo. Use `launch-api` instead of `launch-ui` to launch the HTTP API server.
