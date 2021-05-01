@@ -245,11 +245,11 @@
         },
         "ipython": {
             "hashes": [
-                "sha256:9c900332d4c5a6de534b4befeeb7de44ad0cc42e8327fa41b7685abde58cec74",
-                "sha256:c0ce02dfaa5f854809ab7413c601c4543846d9da81010258ecdab299b542d199"
+                "sha256:3455b020a895710c4366e8d1b326e5ee6aa684607907fc96895e7b8359569f49",
+                "sha256:69178f32bf9c6257430b6f592c3ae230c32861a1966d2facec454e09078e232d"
             ],
             "markers": "python_version >= '3.3'",
-            "version": "==7.22.0"
+            "version": "==7.23.0"
         },
         "ipython-genutils": {
             "hashes": [
@@ -384,6 +384,14 @@
             ],
             "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
             "version": "==1.1.1"
+        },
+        "matplotlib-inline": {
+            "hashes": [
+                "sha256:5cf1176f554abb4fa98cb362aa2b55c500147e4bdbb07e3fda359143e1da0811",
+                "sha256:f41d5ff73c9f5385775d5c0bc13b424535c8402fe70ea8210f93e11f3683993e"
+            ],
+            "markers": "python_version >= '3.5'",
+            "version": "==0.1.2"
         },
         "mistune": {
             "hashes": [
@@ -817,11 +825,11 @@
         },
         "streamlit": {
             "hashes": [
-                "sha256:156051dd1b2233d9cfa1d512edec8284567aa44def13cc228034e032bbb47d85",
-                "sha256:a67951245581bacce377bc33965890afe9170dc782d9ae4fcfc5fc05ace59013"
+                "sha256:4e6b18df58a3497124336b70a638c3405ccfaab8ad0e9c0060017269833faa63",
+                "sha256:c713a99a691fe664f4013aae29c0947407576aa222038b66cff5add422b17257"
             ],
             "markers": "python_version >= '3.6'",
-            "version": "==0.80.0"
+            "version": "==0.81.0"
         },
         "terminado": {
             "hashes": [
@@ -1084,11 +1092,11 @@
         },
         "black": {
             "hashes": [
-                "sha256:20d326de75d13be6290925a95c94a9f368aca2f71cb7b753a938a5ae20f34a37",
-                "sha256:c9601dc863779db2fb1bf18b345bbfa2bb868463123cde6a7eff44b59e4ef739"
+                "sha256:bff7067d8bc25eb21dcfdbc8c72f2baafd9ec6de4663241a52fb904b304d391f",
+                "sha256:fc9bcf3b482b05c1f35f6a882c079dc01b9c7795827532f4cc43c0ec88067bbc"
             ],
             "markers": "python_full_version >= '3.6.2'",
-            "version": "==21.4b1"
+            "version": "==21.4b2"
         },
         "bleach": {
             "hashes": [
@@ -1366,11 +1374,11 @@
         },
         "ipython": {
             "hashes": [
-                "sha256:9c900332d4c5a6de534b4befeeb7de44ad0cc42e8327fa41b7685abde58cec74",
-                "sha256:c0ce02dfaa5f854809ab7413c601c4543846d9da81010258ecdab299b542d199"
+                "sha256:3455b020a895710c4366e8d1b326e5ee6aa684607907fc96895e7b8359569f49",
+                "sha256:69178f32bf9c6257430b6f592c3ae230c32861a1966d2facec454e09078e232d"
             ],
             "markers": "python_version >= '3.3'",
-            "version": "==7.22.0"
+            "version": "==7.23.0"
         },
         "ipython-genutils": {
             "hashes": [
@@ -1537,6 +1545,14 @@
             ],
             "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
             "version": "==1.1.1"
+        },
+        "matplotlib-inline": {
+            "hashes": [
+                "sha256:5cf1176f554abb4fa98cb362aa2b55c500147e4bdbb07e3fda359143e1da0811",
+                "sha256:f41d5ff73c9f5385775d5c0bc13b424535c8402fe70ea8210f93e11f3683993e"
+            ],
+            "markers": "python_version >= '3.5'",
+            "version": "==0.1.2"
         },
         "mccabe": {
             "hashes": [
@@ -2172,11 +2188,11 @@
         },
         "streamlit": {
             "hashes": [
-                "sha256:156051dd1b2233d9cfa1d512edec8284567aa44def13cc228034e032bbb47d85",
-                "sha256:a67951245581bacce377bc33965890afe9170dc782d9ae4fcfc5fc05ace59013"
+                "sha256:4e6b18df58a3497124336b70a638c3405ccfaab8ad0e9c0060017269833faa63",
+                "sha256:c713a99a691fe664f4013aae29c0947407576aa222038b66cff5add422b17257"
             ],
             "markers": "python_version >= '3.6'",
-            "version": "==0.80.0"
+            "version": "==0.81.0"
         },
         "terminado": {
             "hashes": [
