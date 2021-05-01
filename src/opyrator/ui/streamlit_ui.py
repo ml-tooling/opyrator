@@ -53,7 +53,7 @@ def launch_ui(opyrator_path: str, port: int = 8501) -> None:
             python_path = f"set PYTHONPATH=%PYTHONPATH%;{getcwd()} &&"
 
         subprocess.run(
-            f'''{python_path} "{sys.executable}" -m streamlit run --server.port={port} --server.headless=True --runner.magicEnabled=False --server.maxUploadSize=50 --browser.gatherUsageStats=False {f.name}''',
+            f"""{python_path} "{sys.executable}" -m streamlit run --server.port={port} --server.headless=True --runner.magicEnabled=False --server.maxUploadSize=50 --browser.gatherUsageStats=False {f.name}""",
             shell=True,
         )
 
