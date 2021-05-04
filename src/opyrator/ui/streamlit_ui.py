@@ -826,8 +826,6 @@ def render_streamlit_ui(opyrator: Opyrator) -> None:
     session_state = streamlit_utils.get_session_state()
 
     title = opyrator.name
-    if "opyrator" not in opyrator.name.lower():
-        title += " - Opyrator"
 
     # Page config can only be setup once
     # st.set_page_config(page_title="Opyrator", page_icon=":arrow_forward:")
