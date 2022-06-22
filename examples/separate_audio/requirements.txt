@@ -1,4 +1,4 @@
 opyrator
 # apt-get install ffmpeg
-numpy==1.18.5
+numpy==1.22.0
 spleeter
