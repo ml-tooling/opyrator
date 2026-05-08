@@ -205,19 +205,20 @@
         },
         "gitdb": {
             "hashes": [
-                "sha256:6c4cc71933456991da20917998acbe6cf4fb41eeaab7d6d67fbc05ecd4c865b0",
-                "sha256:96bf5c08b157a666fec41129e6d327235284cca4c81e92109260f353ba138005"
+                "sha256:5ef71f855d191a3326fcfbc0d5da835f26b13fbcba60c32c21091c349ffdb571",
+                "sha256:67073e15955400952c6565cc3e707c554a4eea2e428946f7a4c162fab9bd9bcf"
             ],
-            "markers": "python_version >= '3.4'",
-            "version": "==4.0.7"
+            "markers": "python_version >= '3.7'",
+            "version": "==4.0.12"
         },
         "gitpython": {
             "hashes": [
-                "sha256:3283ae2fba31c913d857e12e5ba5f9a7772bbc064ae2bb09efafa71b0dd4939b",
-                "sha256:be27633e7509e58391f10207cd32b2a6cf5b908f92d9cd30da2e514e1137af61"
+                "sha256:80da2d12504d52e1f998772dc5baf6e553f8d2fcfe1fcc226c9d9a2ee3372dcc",
+                "sha256:d352abe2908d07355014abdd21ddf798c2a961469239afec4962e9da884858f9"
             ],
-            "markers": "python_version >= '3.4'",
-            "version": "==3.1.14"
+            "index": "pypi",
+            "markers": "python_version >= '3.7'",
+            "version": "==3.1.50"
         },
         "h11": {
             "hashes": [
@@ -809,11 +810,11 @@
         },
         "smmap": {
             "hashes": [
-                "sha256:7e65386bd122d45405ddf795637b7f7d2b532e7e401d46bbe3fb49b9986d5182",
-                "sha256:a9a7479e4c572e2e775c404dcd3080c8dc49f39918c2cf74913d30c4c478e3c2"
+                "sha256:4d9debb8b99007ae47165abc08670bd74cb74b5227dda7f643eccc4e9eb5642c",
+                "sha256:c106e05d5a61449cf6ba9a1e650227ecfb141590d2a98412103ff35d89fc7b2f"
             ],
-            "markers": "python_version >= '3.5'",
-            "version": "==4.0.0"
+            "markers": "python_version >= '3.7'",
+            "version": "==5.0.3"
         },
         "starlette": {
             "hashes": [
